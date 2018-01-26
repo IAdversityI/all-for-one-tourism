@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>商家优惠</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jqsslist.css" rel="stylesheet">
+  </head>
+  <body class="containerdiv">
+  <div><h1 class="text-center">全域旅游活动商家</h1> 
+  </div>
+  <div class="container ">
+	<div class="col-md-12">
+		<div class="row ">
+			<div class="col-md-12 search">
+	  		<button id="searchbtn1" type="button" class="btn btn-info but" onclick="openMenu('#companytype')">商家分类</button>
+			<input id="searchinput1" type="hidden">
+			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+			<button id="searchbtn2" type="button" class="btn btn-info but" onclick="openMenu('#activitytype')">票券类型</button>
+			<input id="searchinput2" type="hidden">
+			<!-- Indicates a successful or positive action -->
+			<button id="searchbtn3" type="button" class="btn btn-info but" onclick="openMenu('#activityproperty')">活动类型</button>
+			<input id="searchinput3" type="hidden">
+			<!-- Contextual button for informational alert messages -->
+			<button id="searchbtn4" type="button" class="btn btn-info but" onclick="openMenu('#dq')">所属区域</button>
+			<input id="searchinput4" type="hidden">
+			<input id="layerNums" type="hidden">
+			<input id="currentPage" type="hidden" value="1"/>
+			</div>
+	  	</div>
+	
+          <div id="jqsslist">
+          <!--  
+          	<div class="col-md-12">
+	          	<div class="col-md-9 jqsslist">
+	          		<!-- 正面 --> <!--
+	          		<div id="huodong0" class="col-md-12" onclick="turnActive('#huodong1','#huodong0')" style="background-image: ">
+		          		<div class="col-md-3">
+							<p align="center"><img alt="" src="/pages/sssj/img/hgs.jpg" width="80px" height="80px"></p>
+	           				<p align="center" class="title">荔波老鸭店</p>
+		          		</div>
+		          		<div class="col-md-7">
+							<!--<p class="contentHead">新开张免费试吃</p>--> <!--
+	           				<p align="center" class="contentName">景点门票</p>
+	           				<p align="center" class="contentExpires">有效期</p>
+		          		</div>
+		          		<div class="col-md-2">
+							<p align="right" class="footNum">NO.191</p>
+	           				<p align="right" class="footLogo">行邮通</p>
+		          		</div>
+	          		</div>
+	          		<!-- 反面 --> <!--
+	          		<div id="huodong1" class="col-md-12" style="display:none;width:100%" onclick="turnActive('#huodong0','#huodong1')">
+		          		<div class="col-md-8">
+							  <p align="center" class="footNum">注意事项：</p>
+							  <p></p>
+		          		</div>
+		          		<div class="col-md-2">
+							  <p align="center"><img alt="" src="/pages/sssj/img/hgs.jpg" width="80px" height="80px"></p>
+		          		</div>
+		          		<div class="col-md-2">
+							<p align="right" class="footNum">NO.191</p>
+		          		</div>
+	          		</div>
+	          	</div>
+	          	<div class="col-md-2">
+	          		<input type="button" class="btn btn-success but" value="领票"/>
+	          	</div>
+          	</div>
+            -->
+          </div><!--/row-->
+          <div class="row">
+          	   <div id="layerpages" class="col-md-11" align="right"></div>
+          </div>
+        </div>
+
+    </div><!--/.container-->
+    
+    <div id="companytype" style="padding: 30px;display: none;" class="klbtn">
+    	<span style='color:#000;font-size:20px;'>数据载入中,请稍后...</span>
+    </div>
+    
+    <div id="activitytype" style="padding: 30px;display: none;" class="klbtn">
+    	<span style='color:#000;font-size:20px;'>数据载入中,请稍后...</span>
+    </div>
+    
+    <div id="activityproperty" style="padding: 30px;display: none;" class="klbtn">
+    	<span style='color:#000;font-size:20px;'>数据载入中,请稍后...</span>
+    </div>
+    
+    <div id="dq" style="padding: 30px;display: none;" class="klbtn">
+   		<button id="dq0" type="button" class="btn btn-info but" onclick="selectVal('searchbtn4','searchinput4','','所属区域','所属区域')">全省</button>
+   		<button id="dq1" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520100','所属区域','贵阳')">贵阳</button>
+   		<button id="dq2" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520200','所属区域','六盘水')">六盘水</button>
+   		<button id="dq3" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520300','所属区域','遵义')">遵义</button>
+   		<button id="dq4" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520400','所属区域','安顺')">安顺</button>
+   		<button id="dq5" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520500','所属区域','毕节')">毕节</button>
+   		<button id="dq6" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520600','所属区域','铜仁')">铜仁</button>
+   		<button id="dq7" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522300','所属区域','黔西南')">黔西南</button>
+   		<button id="dq8" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522600','所属区域','黔东南')">黔东南</button>
+   		<button id="dq9" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522700','所属区域','黔南')">黔南</button>
+    </div>
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../../../view/js/laypage/laypage.js"></script>
+	<script type="text/javascript" src="../../../view/js/address.js"></script>
+    <script type="text/javascript">
+	    layer.config({
+		    extend: 'extend/layer.ext.js'
+		});
+    	//优惠信息展示
+    	function getList(refrash){
+    		//参数处理
+    		var companyTypeId = $("#searchinput1").val() == ""?-1:$("#searchinput1").val();
+    		var activityTypeId = $("#searchinput2").val() == ""?-1:$("#searchinput2").val();
+    		var propertyId = $("#searchinput3").val() == ""?-1:$("#searchinput3").val();
+    		var cityId = $("#searchinput4").val() == ""?-1:$("#searchinput4").val();
+    		
+			layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>",{icon:16,time:0});
+    		
+    		var jqsslist = $("#jqsslist");
+			if(refrash){ $('#currentPage').val(1); }
+			//console.log("111="+$('#currentPage').val());
+    		$.ajax({
+//    			url : 'http://www.bianlihuodong.com/touchScreen/activitylist',
+				url : urlBlhd+'touchScreen/activitylist',
+    			data:{
+    				"pageNo" : $("#currentPage").val(),
+    				"pageSize" : 3,
+    				"companyTypeId" : companyTypeId,
+    				"activityTypeId" : activityTypeId,
+    				"propertyId" : propertyId,
+    				"cityid" : cityId
+    			},
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+    				if(data.status=="success"){
+
+
+	    				laypage({
+	    				    cont: 'layerpages',
+	    				    curr:  $("#currentPage").val() || 1,
+        				      //pages: data.pages,	    				     
+							pages: data.data.pageCount,
+	    				    groups: 4,
+	    				    skin: '#AF0000',
+	    				    jump: function(obj,first){
+	    				    	$("#currentPage").val(obj.curr);
+	    				    	//alert(data.data.pageCount);
+	    				    	if(!first){
+	    				    		getList();
+	    				    	}
+	    				    }
+	    				});
+						var infos = data.data.activities;
+						//console.log("票券数量有："+infos.length);
+												
+						var html="";
+	    				for(var i = 0;i<infos.length;i++){
+	    				
+	    				     var typeid=infos[i].activetypeid;
+	    				     
+	    					var num = infos[i].number - infos[i].receiveNum;
+	    					var ticketNum = infos[i].receiveNum +1;
+	    					//正面id 反面id
+	    					var huodong1 = "huodong" + i + "1";
+	    					var huodong2 = "huodong" + i + "2";
+	    					 //alert(typeid);
+	    					html += "<div class='col-md-12'>";
+	    					 
+	    					html += "<div class='col-md-9'>";
+	    					
+	    					html += "<div id='" + huodong1 + "' class='col-md-12 jqsslist' onclick='turnActive(\"#" + huodong2 + "\",\"#" + huodong1 + "\")'" +
+	    							"style='background-image: url(" + infos[i].positive + ");width:596px;height:192px;'>";
+	    					
+	    					if(typeid==4)	{
+	    					 
+                            html += "<div class='col-md-7' style='float:left;'>";                            
+                            html += "<p align='left' class='topNum' id='positiveNum" + i + "'>No." + ticketNum + "</p>";  //TODO参与人数number-领取数量
+                           
+                             html += "<p align='center' class='contentName'>" + infos[i].templatetype + "</p>"; 
+                            
+                            html += "<p align='center' class='contentHead'>" + infos[i].activityname + "</p>";
+                            html += "<p align='center' class='contentExpires4'>有效期：" + infos[i].activitystarttime + "-" + infos[i].activityendtime + "</p>";
+                            html += "</div>";
+	    					
+	    					html += "<div class='col-md-4' style='float: right;'>";
+	    					
+                            html += "<p align='center' class='image-4'><img src='" + infos[i].logo + "' width='130px' height='90px'></p>";
+                            html += "<p align='center' class='title'>" + infos[i].compname + "</p>";
+                            html += "</div>";
+                             
+	    					} else{
+	    					html += "<div class='col-md-3'>";
+	    					html += "<p align='center' class='image'><img src='" + infos[i].logo + "' width='80px' height='80px'></p>";
+	    					html += "<p align='center' class='title'>" + infos[i].compname + "</p>";
+	    					html += "</div>";
+	    					
+	    					html += "<div class='col-md-7'>";
+	    					html += "<p class='contentHead'>" + infos[i].activityname + "</p>";
+	    					
+	    					 if(typeid==3){html += "<p align='center' class='contentName'>￥<i>" +  infos[i].changeAmount +"</i>"+ infos[i].templatetype + "</p>";}
+	    					 
+	    					else html += "<p align='center' class='contentName'>" + infos[i].templatetype + "</p>";
+	    					html += "<p align='center' class='contentExpires'>有效期：" + infos[i].activitystarttime + "-" + infos[i].activityendtime + "</p>";
+	    					
+	    					html += "</div>";
+	    					
+	    					html += "<div class='col-md-2'>";
+	    					 html += "<p align='right' class='footNum' id='positiveNum" + i + "'>No." + ticketNum + "</p>";  //TODO参与人数number-领取数量
+	    					//html += "<p align='right' class='footLogo'></p>"; //TODO 图标参数
+	    					
+	    					html += "</div>";}
+	    					html += "</div>";
+	    					
+	    					//反面
+	    					html += "<div id='" + huodong2 + "' style='display:none;width:596px;height:192px;background-image: url(" + infos[i].counter + ")' class='col-md-12 jqsslist' onclick='turnActive(\"#" + huodong1 + "\",\"#" + huodong2 + "\")'>";
+	    					html += "<div class='col-md-9 notice'>";
+	    					html += "<p align='left'>注意事项：</p>";
+	    					html += "<p align='left'>" + infos[i].activitynotice + "</p>";
+	    					
+	    					html += "<p align='left' class='fwpt'><span>贵州省旅游公共信息服务平台</span><span class='bqjs'>活动方保留最终解释权</span></p>";
+	    					html += "</div>";
+	    					html += "<div class='col-md-3'>";
+	    					//html += " <p align='center' class='counterlogo'><img src='" + infos[i].counterlogo + "' width='100px' height='100px'></p>";
+	    					html += "</div>";
+	    					html += "<div class='col-md-2'>";
+	    					html += "<p align='right' class='footNum' id='counterNum" + i + "'>No." + ticketNum + "</p>";  //参与人数number-领取数量
+	    					html += "</div>";
+	    					html += "</div>";
+	    					
+	    					html += "</div>";
+	    					//领票按钮
+	    					html += "<div class='col-md-2'>";
+	    					
+	    					
+	    					html += "<input id='ticket'" + i + " type='button' class='btn btn-warning btnlp' value='领票' onclick=\"tickets('" + infos[i].activityid + "','" + i + "'," + ticketNum +"," + num + ")\"/>";
+	    					html +="<div id='num" + i + "'>(剩余票数：" + num + ")</div>";
+	    					html += "</div>";
+	    					html += "</div>";
+	    				}
+	    				jqsslist.html(html);
+	    				layer.closeAll();
+    				}else{
+    					layer.closeAll();
+    					layer.msg(data.msg,{time:2000});
+    				}
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(textStatus);
+    				 layer.closeAll();
+    			 }
+    		});
+    	}
+    
+    
+    
+    	//获取商家分类
+    	function getCompanyType(){
+    		$.ajax({
+    			url : urlBlhd+'touchScreen/companytype',
+//    			url : 'http://www.bianlihuodong.com/touchScreen/companytype',
+    			//data : {"callback":1234},
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+   					var companytype = $("#companytype");
+       				if(data.status == "success"){
+       					var infos = data.companytypes;
+       					var html="";
+       					html += "<button id='companytype0' type='button' class='btn btn-info but' onclick=\"selectVal('searchbtn1','searchinput1','','全类商家','商家分类')\">全类商家</button>";
+           				for(var i = 0;i<infos.length;i++){
+           					var j=i+1;
+           					html += "<button id='companytype" + j + "' type='button' class='btn btn-default but' onclick=\"selectVal('searchbtn1','searchinput1','" + infos[i].id + "','商家分类','" + infos[i].dmz + "')\">" + infos[i].dmz + "</button>";
+           				}
+           				companytype.html(html);
+       				}else{
+       					activitytype.html("加载失败，请点击刷新重新加载。<br/>" + data.msg);
+       				}
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(errorThrown);
+    			 } 
+    		});
+    	}
+    	
+    	//获取活动分类
+    	function getActivitytype(){
+    		$.ajax({
+    			url : urlBlhd+'touchScreen/activitytype',
+//    			url : 'http://www.bianlihuodong.com/touchScreen/activitytype',
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+   					var activitytype = $("#activitytype");
+       				if(data.status == "success"){
+       					var infos = data.activitytypes;
+       					var html="";
+       					html += "<button id='activitytype0' type='button' class='btn btn-info but' onclick=\"selectVal('searchbtn2','searchinput2','','全部票券类型','票券类型')\">全部</button>";
+           				for(var i = 0;i<infos.length;i++){
+           					var j=i+1;
+           					html += "<button id='activitytype" + j + "' type='button' class='btn btn-default but' onclick=\"selectVal('searchbtn2','searchinput2','" + infos[i].id + "','票券类型','" + infos[i].dmz + "')\">" + infos[i].dmz + "</button>";
+           				}
+           				activitytype.html(html);
+       				}else{
+       					activitytype.html("加载失败，请点击刷新重新加载。<br/>" + data.msg);
+       				}
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(textStatus);
+    			 } 
+    		});
+    	}
+    	
+    	
+    	//获取活动属性分类
+    	function getActivityproperty(){
+    		$.ajax({
+    			url : urlBlhd+'touchScreen/activityproperty',
+//    			url : 'http://www.bianlihuodong.com/touchScreen/activityproperty',
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+    				if(data.status == "success"){
+           				var activityproperty = $("#activityproperty");
+       					var infos = data.properties;
+       					var html="";
+       					html += "<button id='activityproperty0' type='button' class='btn btn-info but' onclick=\"selectVal('searchbtn3','searchinput3','','全部活动类型','活动类型')\">全部</button>";
+           				for(var i = 0;i<infos.length;i++){
+           					var j=i+1;
+           					html += "<button id='activityproperty" + j + "' type='button' class='btn btn-default but' onclick=\"selectVal('searchbtn3','searchinput3','" + infos[i].id + "','活动类型','" + infos[i].activityProperty + "')\">" + infos[i].activityProperty + "</button>";
+           				}
+           				activityproperty.html(html);
+       				}else{
+       					activitytype.html("加载失败，请点击刷新重新加载。<br/>" + data.msg);
+       				}
+    				
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(textStatus);
+    			 } 
+    		});
+    	}
+    
+    	function openMenu(id){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['530px'],
+				offset:  '100px',
+			    content: $(id)
+			});
+    	}
+    	
+    	//优惠票正反面
+    	function turnActive(show,hide){
+			$(show).show();
+			$(hide).hide();
+    	}
+    	
+    	function selectVal(searchBtnId,searchInputId,selectCode,searchBtnName,selectBtnName){
+    		if(selectCode == ""){
+    			$("#" + searchBtnId).html(searchBtnName);
+    		}else{
+    			$("#" + searchBtnId).html(selectBtnName);
+    		}
+    		$("#" + searchInputId).val(selectCode);
+    		layer.closeAll();
+    		getList(1);
+    	}
+    	
+    	
+    	//
+    	function tickets(activityid,rowNum,ticketNum,num){
+    		layer.msg("<span style='color:#000;font-size:20px;'>正在领票中......<span>",{icon:16,time:0});
+    		//判断是否已登录
+    		//localStorage.setItem("blkid", $("#cardInput").val());
+    		//localStorage.getItem("mobile");
+    		if(localStorage.getItem("mobile") == "" || localStorage.getItem("mobile") == null){
+    			layer.closeAll();
+    			layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>未找到便利扣信息，请返回便利扣界面进行登录</div>");
+    		}else{
+    			$.ajax({
+        			url : urlBlhd+'touchScreen/receiveActivity',
+//        			url : 'http://www.bianlihuodong.com/touchScreen/receiveActivity',
+        			data : {
+        				"mobile" : localStorage.getItem("mobile"),
+        				"activityid" : activityid,
+        				"count" : 1,
+        				"validateway" : 2
+        			},
+        			type:'post',
+        		    dataType:'jsonp',
+        			success:function(data){
+        				layer.closeAll();
+        				if(data.status == "success"){
+        					$("#ticket" + rowNum).attr('disabled',"true");
+        					
+        					//票号
+        					ticketNum = ticketNum+1;
+        					$("#positiveNum" + rowNum).html("No." +  ticketNum);
+        					$("#counterNum" + rowNum).html("No." +  ticketNum);
+        					
+        					//剩余票数
+        					num = num - 1;
+        					$("#num" + rowNum).html("(剩余票数：" +  num +")");
+        					layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+           				}else{
+           					layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+           				}
+        			},
+        			error: function(XMLHttpRequest, textStatus, errorThrown) {
+        				 alert(textStatus);
+        			 } 
+        		});
+    		}
+    	}
+    	
+    	//领票(通过手机号领取)
+    	/*function tickets(activityid,ticketButton){
+    		layer.msg("<span style='color:#000;font-size:20px;'>正在领票中......<span>",{icon:16,time:0});
+    		//判断是否已登录
+    		//localStorage.setItem("blkid", $("#cardInput").val());
+    		//localStorage.getItem("mobile");
+    		if(localStorage.getItem("mobile") == "" || localStorage.getItem("mobile") == null){
+    			layer.closeAll();
+    			layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>未找到便利扣信息，请返回便利扣界面进行登录</div>");
+    		}else{
+    			$.ajax({
+        			url : 'http://www.bianlihuodong.com/touchScreen/receiveByBLK',
+        			data : {
+        				"blkid" : localStorage.getItem("blkid"),
+        				"activityid" : activityid,
+        				"count" : 1,
+        				"validateway" : 2
+        			},
+        			type:'post',
+        		    dataType:'jsonp',
+        			success:function(data){
+        				layer.closeAll();
+        				if(data.status == "success"){
+        					$(ticketButton).attr('disabled',"true");
+        					layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+           				}else{
+           					layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+           				}
+        			},
+        			error: function(XMLHttpRequest, textStatus, errorThrown) {
+        				 alert(textStatus);
+        			 } 
+        		});
+    		}
+    	}*/
+    	
+    	$(function() {
+    		getCompanyType();
+        	getActivitytype();
+        	getActivityproperty();
+        	getList();
+    	});
+    	
+    	
+    	function ticker(){
+    	   layer.open({
+                type:1,
+                title: "",
+                shadeClose:true,
+                shade: 0.1,
+                closeBtn: 1,
+                content: "<span style='color:#000;font-size:20px;'>正在领票中......<span>"
+            });
+    	}
+    	
+    </script>
+    
+    </body>
+</html>

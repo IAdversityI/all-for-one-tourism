@@ -1,0 +1,79 @@
+
+<style>
+    #imagePt {
+        width: 99px;
+        position: absolute;
+        top: 200px;
+        left: 0px;
+        /*z-index: 100000000;*/
+    }
+</style>
+<div  style="width: 1000px; height: 1203px;position:absolute;top: 0px;">
+    <!--<h1>你你你你你</h1>-->
+    <div  style="width:100%" id="content" class="content">
+        <ul class="mar0" style="width: 100%">
+            <li style="height:176px;position: relative;left:0px;top:108px;"  onclick="load('pages/waitAtTianYan/exploreFast/fast.html','')">>
+                <div style="overflow: hidden;position: absolute;left:0px;top:0px"><img src="view/images/ptlvfa/leftPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:350px;top:0px"><img style="width: 397px;height: 176px" src="view/images/ptlvfa/leftCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:747px;top:0px"><img src="view/images/ptlvfa/leftPart3.png" alt=""></div>
+                <span style="overflow: hidden;position: absolute;left:288px;top:30px;font-size:40px;font-weight: bold;color:white;">星际穿越星际穿越星际穿越</span>
+            </li>
+            <li style="height:176px;position: relative;left:0px;top:208px;">
+                <div style="overflow: hidden;position: absolute;left:0px;  top:43px"><img src="view/images/ptlvfa/leftPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:350px;top:43px"><img style="width: 397px;height: 176px" src="view/images/ptlvfa/leftCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:747px;top:43px"><img src="view/images/ptlvfa/leftPart3.png" alt=""></div>
+                <span style="overflow: hidden;position: absolute;left:288px;top:73px;font-size:40px;font-weight: bold;color:white;">星际穿越星际穿越星际穿越</span>
+
+            </li>
+            <li style="height:176px;position: relative;left:0px;top:308px;">
+                <div style="overflow: hidden;position: absolute;left:0px;  top:143px"><img src="view/images/ptlvfa/leftPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:350px;top:143px"><img style="width: 397px;height: 176px" src="view/images/ptlvfa/leftCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:747px;top:143px"><img src="view/images/ptlvfa/leftPart3.png" alt=""></div>
+                <span style="overflow: hidden;position: absolute;left:288px;top:173px;font-size:40px;font-weight: bold;color:white;">星际穿越星际穿越星际穿越</span>
+
+            </li>
+            <!--右边-->
+            <li style="height:176px;position: relative;left:0px;top:-247px;">
+                <div style="overflow: hidden;position: absolute;left:730px;top:4px"><img src="view/images/ptlvfa/rightPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:650px;top:4px"><img src="view/images/ptlvfa/rightCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:571px;top:4px"><img src="view/images/ptlvfa/rightPart3.png" alt=""></div>
+            </li>
+            <li style="height:176px;position: relative;left:0px;top:-85px;">
+                <div style="overflow: hidden;position: absolute;left:730px;top:4px"><img src="view/images/ptlvfa/rightPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:650px;top:4px"><img src="view/images/ptlvfa/rightCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:571px;top:4px"><img src="view/images/ptlvfa/rightPart3.png" alt=""></div>
+            </li>
+            <li style="height:176px;position: relative;left:0px;top:85px;">
+                <div style="overflow: hidden;position: absolute;left:730px;top:4px"><img src="view/images/ptlvfa/rightPart1.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:650px;top:4px"><img src="view/images/ptlvfa/rightCenter.png" alt=""></div>
+                <div style="overflow: hidden;position: absolute;left:571px;top:4px"><img src="view/images/ptlvfa/rightPart3.png" alt=""></div>
+            </li>
+        </ul>
+        <img src="view/images/ptlvfa/point.png" alt="" id="imagePt" >
+    </div>
+
+</div>
+<script>
+    var image = document.getElementById("imagePt");
+    var info =document.getElementById("info");
+    info.onclick = function (event) {
+        var event = event || window.event;
+        targetX = event.clientX - image.offsetWidth / 2-39;
+        targetY = event.clientY - image.offsetHeight / 2-180;
+        console.log(leaderX);
+        console.log(leaderY);
+    }
+    // 缓动
+    var leaderX = 0,
+        leaderY = 0,
+        targetX = 528,
+        targetY = 650;
+    setInterval(function () {
+        leaderX = leaderX + (targetX - leaderX) / 10;
+        leaderY = leaderY + (targetY - leaderY) / 10;
+        image.style.left = leaderX + "px";
+        image.style.top = leaderY + "px";
+
+    }, 10)
+
+</script>

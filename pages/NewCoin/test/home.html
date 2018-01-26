@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  href="/2017pt1107v2/view/js/keyboard/css/keyboard.css" rel="stylesheet">
+    <link  href="/2017pt1107v2/view/js/keyboard/themes/jquery-ui.css" rel="stylesheet">
+    <script src="/2017pt1107v2/view/js/jquery-1.10.2.min.js"></script>
+    <script src="/2017pt1107v2/view/js/keyboard/themes/jquery-ui.min.js"></script>
+    <script src="/2017pt1107v2/view/js/keyboard/js/jquery.keyboard.js"></script>
+    <script src="/2017pt1107v2/view/js/keyboard/js/jquery.mousewheel.js"></script>
+    <script src="/2017pt1107v2/view/js/keyboard/js/jquery.keyboard.extension-typing.js"></script>
+    <script src="/2017pt1107v2/view/js/address.js"></script>
+    <style type="text/css">
+        .numkeyboard {
+            width: 300px;
+            height: 80px;
+            margin: 10px;
+            font-size: 30px;
+            line-height: 100px;
+        }
+
+        .bg {
+            /*background: url("/2017pt1107v2/pages/NewCoin/img/qylvBg.png") no-repeat;*/
+            /*background-size: cover;*/
+        }
+
+        .vaButton {
+            font-size: 30px;
+            color: #fef4e9;
+            border: solid 1px #da7c0c;
+            background: #f78d1d;
+            background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+            background: -moz-linear-gradient(top, #faa51a, #f47a20);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+            margin: 1em 0.5em;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            /*font: 30px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;*/
+            padding: 10px 20px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg">
+
+    <div class="Title">
+        <p>全域旅游便利活动 </p>
+        <p>
+            <input id="logo" type="button" placeholder="手机号码" class="vaButton" value="正在查询登录信息..." onclick="pos()"/>
+            <input id="out" type="button" placeholder="手机号码"  class="vaButton" value="退 出" onclick="outData()"/>
+        </p>
+
+    </div>
+
+    <div>
+        <ul class="mar0" style=" ;color: #FFFFff;font-size: 30px">
+            <li style="text-align: center;width: 100%;  padding-top: 50px;padding-bottom: 50px"
+                onclick="load('pages/NewCoin/sjyh.html','jdss')">
+                <!--onclick="load('pages/NewCoin/shopList.html','jdss')">-->
+
+                <img src="/2017pt1107v2/pages/NewCoin/img/qylv.png" alt="">
+                <!--全域旅游活动商家-->
+            </li>
+            <li style="text-align: center;width: 100%;  padding-top: 50px;padding-bottom: 50px"
+                onclick="checkBind()">
+                <img src="/2017pt1107v2/pages/NewCoin/img/myCoin.png" alt="">
+                <!--我的便利扣-->
+            </li>
+        </ul>
+    </div>
+
+    <div id="auth_pro_con" class="auth_pro_con" style="display: none;">
+        <ul>
+            <li><input type="text" placeholder="输入手机号码" id="mobile" class="numkeyboard"/>
+                <input id="sendVadent" type="button" class="vaButton" value="免费获取验证码"/></li>
+            <li><input type="text" placeholder="输入验证码" id="verifycode" class="numkeyboard"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    id="codeMsg" style="font-size:30px;color:#4fe45f;margin-right:20px;"></span></li>
+            <li><input class="vaButton" type="button" onclick="bindBlk()" value="确  认"/>
+                <input class="vaButton" type="button" onclick="closeLayer()" value="关  闭"/>
+                <input id="videntType" type="hidden" value="1"/>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    //获取验证码
+    function getyzm() {
+        layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>正在发送短信...</div>");
+
+        $("#sendVadent").attr("disabled", true);
+        var step = 59;
+        $('#sendVadent').val('重新发送60');
+        var _res = setInterval(function () {
+            $("#sendVadent").attr("disabled", true);//设置disabled属性
+            $('#sendVadent').val('重新发送' + step);
+            step -= 1;
+            if (step <= 0) {
+                $("#sendVadent").removeAttr("disabled"); //移除disabled属性
+                $('#sendVadent').val('免费获取验证码');
+                clearInterval(_res);//清除setInterval
+            }
+        }, 1000);
+
+        $.ajax({
+//		url : 'http://www.bianlihuodong.com/touchScreen/getPhoneCode',  //便利活動 地址
+//		url : urlBlhd+'touchScreen/getPhoneCode',  //便利活動 地址
+            url: 'http://220.197.219.244/touchScreen/getPhoneCode',  //便利活動 地址
+            data: {
+                "mobile": $("#mobile").val(),  //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+                "range": 41
+            },
+            type: 'post',
+            dataType: 'jsonp',
+            success: function (data) {
+                if (data.status == "success") {
+                    $("#codeMsg").html("短信已发送");
+                    layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>发送成功</div>");
+                } else {
+                    $('#sendVadent').val("重新发送");
+                    clearInterval(_res);
+                    $("#codeMsg").html("短信发送失败");
+                    layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus);
+                layer.closeAll();
+            }
+        });
+    }
+
+    //验证手机号
+    function vailPhone(phoneNum) {
+        var phone = $(phoneNum).val();
+        var flag = false;
+        var message = "";
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        if (phone == '') {
+            message = "手机号码不能为空！";
+        } else if (phone.length != 11) {
+            message = "请输入有效的手机号码！";
+        } else if (!myreg.test(phone)) {
+            message = "请输入有效的手机号码！";
+        } else {
+            flag = true;
+        }
+        return flag;
+    }
+
+    //验证验证码
+    function vailVerifycode(verifycode) {
+        var phone = $(verifycode).val();
+        var flag = false;
+        var message = "";
+        if (phone == '') {
+            message = "验证码不能为空！";
+        } else if (phone.length != 6) {
+            message = "请输入有效的验证码！";
+        } else {
+            flag = true;
+        }
+        return flag;
+    }
+
+    //绑定手机号
+    function bindBlk() {
+        if (vailPhone('#mobile') == false) {
+            layer.tips("<div style='color:#000;font-size:26px;padding:10px;'>手机号码有误，请检查手机号</div>", "#mobile");
+        } else if (vailVerifycode(verifycode) == false) {
+            layer.tips("<div style='color:#000;font-size:26px;padding:10px;'>验证码有误，请检查验证码</div>", "#verifycode");
+        } else {
+            //便利扣登录绑定
+            if ($("#videntType").val() == "1") {
+                layer.msg("<span style='color:#000;font-size:20px;'>手机绑定中,请稍后...<span>", {icon: 16, time: 0});
+                //获取一个键值
+                var blkid = localStorage.getItem("blkid");
+                $.ajax({
+//	   			url : 'http://www.bianlihuodong.com/touchScreen/bindBLK',
+                    url: 'http://220.197.219.244/touchScreen/bindBLK',
+                    data: {
+                        "mobile": $("#mobile").val(),  //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+                        "verifycode": $("#verifycode").val(),
+                        "blkid": blkid
+                    },
+                    type: 'post',
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        if (data.status == "success") {
+                            layer.closeAll();
+                            localStorage.setItem("mobile", $("#mobile").val());
+                            layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>绑定成功</div>");
+                            //$("#logo").val("您的登录账号为：" + localStorage.getItem("mobile"));
+                            logintime = 5;
+                            isLogin();
+                            logoInfo();
+                        } else {
+                            layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                        layer.closeAll();
+                    }
+                });
+                //手机号登录绑定
+            } else {
+                layer.msg("<span style='color:#000;font-size:20px;'>手机注册登录中,请稍后...<span>", {icon: 16, time: 0});
+                $.ajax({
+//	   			url : 'http://www.bianlihuodong.com/touchScreen/regOrLoginByMobile',
+                    url: 'http://220.197.219.244/touchScreen/regOrLoginByMobile',
+                    data: {
+                        "mobile": $("#mobile").val(),  //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+                        "verifycode": $("#verifycode").val()
+                    },
+                    type: 'post',
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        if (data.status == "success") {
+                            layer.closeAll();
+                            localStorage.setItem("mobile", $("#mobile").val());
+                            layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>注册登录成功</div>");
+                            //$("#logo").val("您的登录账号为：" + localStorage.getItem("mobile"));
+                            logintime = 5;
+                            isLogin();
+                            logoInfo();
+                        } else {
+                            layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                        layer.closeAll();
+                    }
+                });
+            }
+        }
+    }
+
+    function pos() {
+        $("#codeMsg").html("");
+        if (localStorage.getItem("mobile") == "" || localStorage.getItem("mobile") == null) {
+            $("#cardInput").val("");
+            $("#cardContent").html("请将便利扣正面靠近屏幕下方<img src='view/images/xyth20160719.png' width='5%'>标志感应区<p>没有便利扣？<a href='javascript:void(0)' onclick='mobileLogin();' style='color:#ff0000;'>请点此处手机号登录！</a><p>");
+            layer.open({
+                type: 1,
+                title: "",
+                shadeClose: true,
+                shade: 0.5,
+                closeBtn: 0,
+                content: $('#readCard'),
+                //area : ['1000px','140px'],
+                //offset:  ['1090px', '40px']
+                offset: ['690px', '40px']
+
+            });
+            $("#cardInput").focus();
+        } else {
+            layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>您已登录，如需换便利扣，请您点击“退出”按钮。</div>");
+        }
+    }
+
+
+    function closeLayer() {
+        layer.closeAll();
+    }
+
+
+    function checkBind() {
+        if (localStorage.getItem("mobile") != "" && localStorage.getItem("mobile") != null) {
+            load('pages/NewCoin/myplk.html', 'lyjss');
+        } else {
+            pos();
+        }
+    }
+
+    function outData() {
+        if (_pkloginout != null) {
+            clearInterval(_pkloginout);
+            _pkloginout = null;
+        }
+        if (_loginOut != null) {
+            clearInterval(_loginOut);
+            _loginOut = null;
+        }
+        localStorage.setItem("mobile", "");
+        localStorage.setItem("blkid", "");
+        $("#codeMsg").html("");
+        layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>您的便利扣已退出。</div>");
+        $("#logo").val("您还没有登录，请点击登录");
+    }
+
+    function logoInfo() {
+        //logintime = 1200;    //登出时间 单位：s
+        if (localStorage.getItem("mobile") == "" || localStorage.getItem("mobile") == null) {
+            $("#logo").val("您还没有登录，请点击登录");
+        } else {
+            //logintime = 300;
+            //$("#logo").val("您的登录账号为：" + localStorage.getItem("mobile"));
+            if (_pkloginout == null) {
+                _pkloginout = setInterval(function () {
+                    $("#logo").val("您的登录账号为：" + localStorage.getItem("mobile") + ";登出时间还剩：" + logintime);
+                    //logintime-=1;
+                    if (logintime <= 0) {
+                        clearInterval(_pkloginout);//清除setInterval
+                    }
+                }, 1000);
+            }
+        }
+    }
+
+    function mobileLogin() {
+        layer.closeAll();
+        //设置绑定类型
+        $("#videntType").val("2");
+        openMobileInput();
+
+    }
+
+
+    function openMobileInput() {
+        $("#cardInput").val("");
+        $("#mobile").val("");
+        $("#verifycode").val("");
+        layer.open({
+            type: 1,
+            title: "<b>请输入手机号</b>",
+            shade: 0,
+            closeBtn: 0,
+            offset: ['300px', '220px'],
+            area: ['670px', '600px'],
+            content: $("#auth_pro_con"),
+            end: function (index) {
+                $("#videntType").val("1");
+            }
+        });
+    }
+
+    //2017/12/4更改NFC登录接口
+    $(function () {
+        logoInfo();
+
+        var readtimeout = null;
+        //按钮输入操作
+        $("#cardInput").keyup(function () {
+            //替换文字
+            $("#cardContent").html("正在读取数据，请稍后");
+            if (readtimeout == null) {
+                readtimeout = setTimeout(function () {
+                    //XYTB00000001
+                    //layer.msg("<span style='color:#000;font-size:20px;'>正在检查便利扣......<span>",{icon:16,time:0});
+                    //var blkid = "XYTB00000005"; //$("#cardInput").val();
+                    var blkid = $("#cardInput").val();
+                    alert(blkid)
+                    $.ajax({
+//         			url : 'http://www.bianlihuodong.com/touchScreen/checkBLK',
+//         			url : 'http://220.197.219.244/touchScreen/checkBLK',
+                        url: 'http://114.115.149.80:8085/tmc/v1/getticketsbyblkid',
+//         			data : {
+//         				"blkid" : blkid
+//         			},
+                        data: {"blkid": blkid, "status": "0", "currentPage": 1, "type": 2},
+                        type: 'post',
+                        dataType: 'json',
+                        success: function (data) {
+
+                            layer.closeAll();
+                            if (data.status == 0) {
+                                console.log('success')
+                                //alert(data.mobile);
+                                localStorage.setItem("blkid", blkid);
+                                localStorage.setItem("mobile", data.data.user.mobile);
+                                layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>您的便利扣已登录。</div>");
+                                //$("#logo").val("您的登录账号为：" + localStorage.getItem("mobile"));
+                                isLogin();
+                                logoInfo();
+                            } else {
+                                localStorage.setItem("blkid", blkid);
+                                openMobileInput();
+                                //layer.msg("<div style='color:#fff;font-size:20px;padding:10px;'>" + data.msg + "</div>");
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                    readtimeout = null;
+                }, 1000);
+            }
+        });
+
+        //发送验证码
+        $('#sendVadent').click(function () {
+            //验证手机号码
+            var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            var phone = $('#mobile').val();
+            var flag = false;
+            if (phone == '') {
+                message = "手机号码不能为空！";
+            } else if (phone.length != 11) {
+                message = "手机号码长度有误！";
+            } else if (!myreg.test(phone)) {
+                message = "请输入有效的手机号码！";
+                //}else if(checkPhoneIsExist()){
+                //    message = "该手机号码已经被绑定！";
+            } else {
+                flag = true;
+            }
+            if (!flag) {
+                layer.tips("<div style='color:#fff;font-size:20px;padding:10px;'>" + message + "</div>", "#mobile");
+            } else {
+                //发送验证码
+                getyzm();
+            }
+        });
+
+        //键盘输入
+        $('#mobile')
+            .keyboard({
+                display: {
+                    'bksp': "\u2190",
+                    'accept': '确定',
+                    'cancel': '取消'
+                },
+                layout: 'custom',
+                customLayout: {
+                    'default': [
+                        '1 2 3 {bksp}',
+                        '4 5 6 0',
+                        '7 8 9 x',
+                        '{accept} {cancel}'
+                    ]
+                },
+                maxLength: 11,
+                restrictInput: true, // Prevent keys not in the displayed keyboard from being typed in
+                useCombos: false // don't want A+E to become a ligature
+            })
+            .addTyping();
+
+        //键盘输入
+        $('#verifycode')
+            .keyboard({
+                display: {
+                    'bksp': "\u2190",
+                    'accept': '确定',
+                    'cancel': '取消'
+                },
+                layout: 'custom',
+                customLayout: {
+                    'default': [
+                        '1 2 3 {bksp}',
+                        '4 5 6 0 ',
+                        '7 8 9 x',
+                        '{accept} {cancel}'
+                    ]
+                },
+                maxLength: 6,
+                restrictInput: true, // Prevent keys not in the displayed keyboard from being typed in
+                useCombos: false // don't want A+E to become a ligature
+            })
+            .addTyping();
+    });
+
+</script>
+
+</body>
+</html>

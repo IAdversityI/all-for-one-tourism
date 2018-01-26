@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>实时景区列表</title>
+  </head>
+  <body class="containerdiv">
+ <!--/.container-->
+    <div class="addcar">12312312</div> 
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script> 
+    <script type="text/javascript"> 
+	    layer.config({
+		    extend: 'extend/layer.ext.js'
+		}); 
+   $(".addcar").click(function(event){        
+ layer.prompt({
+    formType: 2,
+    value: '初始值',
+    title: '请输入值'
+}, function(value, index, elem){
+    alert(value); //得到value
+    layer.close(index);
+});
+
+});
+    	
+    </script>
+    
+    </body>
+</html>

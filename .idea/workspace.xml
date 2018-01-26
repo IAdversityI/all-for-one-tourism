@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="486132b0-31dc-4c93-82ba-84e22c331e35" name="Default" comment="" />
+    <ignored path="20160825-touch beta.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="20160825-touch beta" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="play.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/play.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="118" column="89" lean-forward="false" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shopList.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/NewCoin/shop/shopList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="35">
+              <caret line="251" column="32" lean-forward="false" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516176722055" expanded="false" signature="1841:1880" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="6126:6152" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="8333:8449" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="8537:8600" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="8640:8680" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="8825:8890" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="8961:9028" ph="..." />
+                <marker date="1516176722055" expanded="true" signature="9102:9170" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question01.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question01.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-420">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question02.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question02.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question03.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question03.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question04.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question04.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question05.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question05.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="639">
+              <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="waitAtPT.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/images/waitAtPT.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shopDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/NewCoin/shop/shopDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2835">
+              <caret line="81" column="6" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516175024120" expanded="true" signature="4105:4131" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="5471:5575" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="5615:5677" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="5776:5802" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="5881:5943" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="6047:6125" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="6202:6278" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="6362:6441" ph="..." />
+                <marker date="1516175024120" expanded="true" signature="6456:6471" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myCoin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/NewCoin/my/myCoin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3255">
+              <caret line="93" column="21" lean-forward="false" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+              <folding>
+                <marker date="1516175024082" expanded="true" signature="4723:4749" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="6558:6664" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="6704:6766" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="6865:6891" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="6970:7032" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="7139:7217" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="7291:7367" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="7448:7511" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="7591:7670" ph="..." />
+                <marker date="1516175024082" expanded="true" signature="7685:7700" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>jquery-1.10.2.min</find>
+      <find>login</find>
+      <find>Totollogintime</find>
+      <find>/view/images/bg.png</find>
+      <find>search</find>
+      <find>layerNums</find>
+      <find>currentPage</find>
+      <find>images/bg.png</find>
+      <find>jqury</find>
+      <find>laypage</find>
+      <find>jquery</find>
+      <find>laypa</find>
+      <find>listpage</find>
+      <find>$(func</find>
+      <find>layui-layer-shade</find>
+      <find>open</find>
+      <find>skin/laypage.css</find>
+      <find>html += &quot;</find>
+      <find>laypage.css</find>
+      <find>link</find>
+      <find>home.</find>
+      <find>load</find>
+      <find>home.js</find>
+      <find>返回</find>
+      <find>贵阳</find>
+      <find>cities.js</find>
+      <find>listpage()</find>
+      <find>1000</find>
+      <find>alert</find>
+      <find>index</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&lt;h1&gt;11111&lt;/h1&gt;</replace>
+      <replace>cont</replace>
+      <replace>1203</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>E:\H5\20170811PT02</dir>
+      <dir>E:\H5\2017pt1107v2</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/planB.html" />
+        <option value="$PROJECT_DIR$/pages/sssj/sssj.html" />
+        <option value="$PROJECT_DIR$/模拟风车旋转效果/css/lanren.css" />
+        <option value="$PROJECT_DIR$/view/css/lanren.css" />
+        <option value="$PROJECT_DIR$/view/js/blkFile01.js" />
+        <option value="$PROJECT_DIR$/view/js/index.js" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/shop/shopCoin.html" />
+        <option value="$PROJECT_DIR$/pages/plk/plkhome.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/myplk.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/sjyhBack.html" />
+        <option value="$PROJECT_DIR$/view/js/laypage/laypage.js" />
+        <option value="$PROJECT_DIR$/pages/homeBack.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/homeBack.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/shopList.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/home.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/sjyh-list.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/iframTest.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/shopListTest.html" />
+        <option value="$PROJECT_DIR$/pages/touristSafety/jdss/jdss-list.html" />
+        <option value="$PROJECT_DIR$/pages/touristSafety/jqss/jqss-list.html" />
+        <option value="$PROJECT_DIR$/pages/touristSafety/lyjss/lyjss-list.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/sjyh.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/home.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/home.js" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/demoStr.html" />
+        <option value="$PROJECT_DIR$/pages/tourismSafety/jqss/jqss-list.html" />
+        <option value="$PROJECT_DIR$/view/css/style.css" />
+        <option value="$PROJECT_DIR$/pages/test/firstDemo.html" />
+        <option value="$PROJECT_DIR$/pages/test/area.json" />
+        <option value="$PROJECT_DIR$/pages/test/smarty.html" />
+        <option value="$PROJECT_DIR$/pages/test/secondDemo.json" />
+        <option value="$PROJECT_DIR$/pages/test/huixian.html" />
+        <option value="$PROJECT_DIR$/pages/test/second.json" />
+        <option value="$PROJECT_DIR$/pages/test/secondDemo.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/slide.js" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/test/shopList.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question06.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/plkhome.html" />
+        <option value="$PROJECT_DIR$/view/js/indexvideo.js" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/enjoyFood/main.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/enjoyHotel/main.html" />
+        <option value="$PROJECT_DIR$/play.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question02.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question01.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question03.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question04.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question07.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/shop/shopDetail.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/my/myCoin.html" />
+        <option value="$PROJECT_DIR$/pages/NewCoin/shop/shopList.html" />
+        <option value="$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question05.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="888" />
+    <option name="y" value="2" />
+    <option name="width" value="1057" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="NewCoin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="NewCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="my" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="NewCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="waitAtTianYan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="waitAtTianYan" type="462c0819:PsiDirectoryNode" />
+              <item name="tianyanContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="ptlvfa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20160825-touch beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2017pt1107v2" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/行游通工作代码备份/大屏便利扣接口/2017maotaitouch071202" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="recentsLimit" value="5" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\H5\2017pt1107v2\view\js" />
+      <recent name="E:\H5\2017pt1107v2\pages\NewCoin\test" />
+      <recent name="E:\H5\2017pt1107v2\pages\test" />
+      <recent name="E:\H5\2017pt1107v2\video" />
+      <recent name="E:\H5\2017pt1107v2\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\H5\2017pt1107v2\pages\NewCoin\sjyh" />
+      <recent name="E:\H5\2017pt1107v2\pages\NewCoin\test" />
+      <recent name="E:\H5\2017pt1107v2\pages\NewCoin" />
+      <recent name="E:\H5\2017pt1107v2\view\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="play.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/20160825-touch beta/play.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+    </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.play.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="486132b0-31dc-4c93-82ba-84e22c331e35" name="Default" comment="" />
+      <created>1472791032747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1472791032747</updated>
+      <workItem from="1493185199363" duration="1809000" />
+      <workItem from="1493978645876" duration="16656000" />
+      <workItem from="1494129863634" duration="13000" />
+      <workItem from="1494148284230" duration="4699000" />
+      <workItem from="1494213950677" duration="6914000" />
+      <workItem from="1494818779869" duration="74000" />
+      <workItem from="1494991872739" duration="3687000" />
+      <workItem from="1495012901309" duration="815000" />
+      <workItem from="1495271013065" duration="4719000" />
+      <workItem from="1495424033387" duration="4606000" />
+      <workItem from="1495440924454" duration="4882000" />
+      <workItem from="1495453209131" duration="1379000" />
+      <workItem from="1495617181871" duration="704000" />
+      <workItem from="1495675927982" duration="163000" />
+      <workItem from="1495876846920" duration="621000" />
+      <workItem from="1496283392622" duration="1928000" />
+      <workItem from="1496295969091" duration="1799000" />
+      <workItem from="1500537941008" duration="352000" />
+      <workItem from="1502421736279" duration="11109000" />
+      <workItem from="1502443089030" duration="797000" />
+      <workItem from="1508381966121" duration="760000" />
+      <workItem from="1509072089987" duration="5109000" />
+      <workItem from="1509088238807" duration="910000" />
+      <workItem from="1509245360248" duration="4796000" />
+      <workItem from="1509327575214" duration="8516000" />
+      <workItem from="1509414289314" duration="4087000" />
+      <workItem from="1509500425348" duration="24518000" />
+      <workItem from="1509586812614" duration="21907000" />
+      <workItem from="1509628029305" duration="4446000" />
+      <workItem from="1509678711860" duration="17704000" />
+      <workItem from="1509800100350" duration="8293000" />
+      <workItem from="1509846589721" duration="40539000" />
+      <workItem from="1509901845911" duration="3330000" />
+      <workItem from="1509932106171" duration="897000" />
+      <workItem from="1509956403467" duration="2127000" />
+      <workItem from="1509960509620" duration="2334000" />
+      <workItem from="1509964209574" duration="14327000" />
+      <workItem from="1510024894486" duration="6442000" />
+      <workItem from="1514883962300" duration="1881000" />
+      <workItem from="1514943258769" duration="1245000" />
+      <workItem from="1514944631060" duration="17000" />
+      <workItem from="1514944674857" duration="14555000" />
+      <workItem from="1515029703238" duration="18922000" />
+      <workItem from="1515132633725" duration="7385000" />
+      <workItem from="1515376008313" duration="18281000" />
+      <workItem from="1515462526172" duration="619000" />
+      <workItem from="1515477426609" duration="12153000" />
+      <workItem from="1515548406206" duration="6044000" />
+      <workItem from="1515570165727" duration="329000" />
+      <workItem from="1515570777756" duration="3929000" />
+      <workItem from="1515640430010" duration="1339000" />
+      <workItem from="1515642335365" duration="530000" />
+      <workItem from="1515722293295" duration="13911000" />
+      <workItem from="1515981524835" duration="12715000" />
+      <workItem from="1516067435415" duration="12213000" />
+      <workItem from="1516154176231" duration="10785000" />
+      <workItem from="1516244369917" duration="3032000" />
+      <workItem from="1516326062429" duration="1662000" />
+      <workItem from="1516774994574" duration="1199000" />
+      <workItem from="1516844725706" duration="199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="381713000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1654334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14693446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pages/test/shopList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/test/slide.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/test/shopListTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="218" column="0" lean-forward="false" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/test/shopList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3080">
+          <caret line="343" column="9" lean-forward="true" selection-start-line="332" selection-start-column="4" selection-end-line="343" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/experience/experience.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/exploreFast/fast.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1470">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/fastSighting/sighting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question06.html" />
+    <entry file="file://$PROJECT_DIR$/view/js/indexvideo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/culture/culture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/enjoyHotel/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/sjyh/sjyh-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1015">
+          <caret line="29" column="102" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/enjoyFood/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/slide.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/slideBowser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/blkFile02.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question07.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/sjyh.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/plkhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="359" column="20" lean-forward="true" selection-start-line="359" selection-start-column="20" selection-end-line="359" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/myplk.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/loginCoin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="308" column="59" lean-forward="false" selection-start-line="308" selection-start-column="59" selection-end-line="308" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/bdxz.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/back.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/bgPT.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/FAST TOURISM PUBLIC INFORMATION SERVICE PLATFORM 拷贝.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/FAST观景台.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/gfgg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/jtlk.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/qrcode_for_gh_dd21b5054bba_1280.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/sbtq.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/seeyoutour.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/tourGuide.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/weather.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/writeu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/xjjd.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/ptlvfa/opBg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/ptlvfa/maichongxing.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/zoom.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/images/waitAtPT.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/my/myCoin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3255">
+          <caret line="93" column="21" lean-forward="false" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+          <folding>
+            <marker date="1516175024082" expanded="true" signature="4723:4749" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="6558:6664" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="6704:6766" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="6865:6891" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="6970:7032" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="7139:7217" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="7291:7367" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="7448:7511" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="7591:7670" ph="..." />
+            <marker date="1516175024082" expanded="true" signature="7685:7700" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/shop/shopDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="81" column="6" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516175024120" expanded="true" signature="4105:4131" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="5471:5575" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="5615:5677" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="5776:5802" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="5881:5943" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="6047:6125" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="6202:6278" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="6362:6441" ph="..." />
+            <marker date="1516175024120" expanded="true" signature="6456:6471" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/NewCoin/shop/shopList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="251" column="32" lean-forward="false" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516176722055" expanded="false" signature="1841:1880" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="6126:6152" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="8333:8449" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="8537:8600" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="8640:8680" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="8825:8890" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="8961:9028" ph="..." />
+            <marker date="1516176722055" expanded="true" signature="9102:9170" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question05.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="118" column="89" lean-forward="false" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question03.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/waitAtTianYan/tianyanContent/question04.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

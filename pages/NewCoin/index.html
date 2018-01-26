@@ -1,0 +1,333 @@
+<style>
+    .TitleHotel {
+        -background: #33526A;
+        width: 100%;
+        line-height: 100px;
+        font-family: 方正超粗黑简体;
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+    }
+
+    /*.noselect {*/
+    /*-moz-user-select: none; !*火狐*!*/
+    /*-webkit-user-select: none; !*webkit浏览器*!*/
+    /*-ms-user-select: none; !*IE10*!*/
+    /*-khtml-user-select: none; !*早期浏览器*!*/
+    /*user-select: none;*/
+</style>
+
+<div style="text-align: center;" class="Tittle">
+    <span style="font-size: 30px;color: #e7e7e7;text-align: center;margin: 0 auto">便利扣</span>
+</div>
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active">
+        <a href="#home" data-toggle="tab">
+            便利扣首页
+        </a>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" id="myTabDrop1" class="dropdown-toggle"
+           data-toggle="dropdown">全部
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+            <li><a href="#home" tabindex="-1" data-toggle="tab">全部</a></li>
+            <li><a href="#food" tabindex="-1" data-toggle="tab">吃</a></li>
+            <li><a href="#hotel" tabindex="-1" data-toggle="tab">住</a></li>
+            <li><a href="#traffic" tabindex="-1" data-toggle="tab">行</a></li>
+            <li><a href="#travel" tabindex="-1" data-toggle="tab">游</a></li>
+            <li><a href="#shopping" tabindex="-1" data-toggle="tab">购</a></li>
+            <li><a href="#entertainment" tabindex="-1" data-toggle="tab">娱</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" id="myTabDrop2" class="dropdown-toggle"
+           data-toggle="dropdown">附近
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop2">
+            <li><a href="#m500" tabindex="-1" data-toggle="tab">方圆500米</a></li>
+            <li><a href="#m1000" tabindex="-1" data-toggle="tab">方圆1公里</a></li>
+            <li><a href="#m5000" tabindex="-1" data-toggle="tab">方圆5公里</a></li>
+            <li><a href="#m10000" tabindex="-1" data-toggle="tab">方圆10公里</a></li>
+            <li><a href="#m15000" tabindex="-1" data-toggle="tab">方圆15公里</a></li>
+            <li><a href="#m20000" tabindex="-1" data-toggle="tab">方圆20公里</a></li>
+            <!--<li><a href="#ejb" tabindex="-1" data-toggle="tab">娱</a></li>-->
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" id="myTabDrop3" class="dropdown-toggle"
+           data-toggle="dropdown">我的票
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop3">
+            <li><a href="#nouse" tabindex="-1" data-toggle="tab">未使用</a></li>
+            <li><a href="#usedtk" tabindex="-1" data-toggle="tab">已使用</a></li>
+            <li><a href="#datedtk" tabindex="-1" data-toggle="tab">已过期</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" id="myTabDrop4" class="dropdown-toggle"
+           data-toggle="dropdown">我的券
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop4">
+            <li><a href="#noUseArch" tabindex="-1" data-toggle="tab">未使用</a></li>
+            <li><a href="#usedArch" tabindex="-1" data-toggle="tab">已使用</a></li>
+            <li><a href="#datedArch" tabindex="-1" data-toggle="tab">已过期</a></li>
+        </ul>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content" style="color: #e7e7e7">
+
+    <div data-spy="scroll" data-target="#navbar-example" data-offset="0"
+         style=" width:1000px;height:1050px;overflow:auto; position: relative;top:0px;z-index:1;"
+         onselectstart="return false"
+         id="dv">
+        <div id="indexPage">
+            <p>首页</p>
+
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;">
+                    <img src="" alt=""></div>
+                <div style="width: 30%;height: 50px;position: absolute;top: 30px;left: 314px;background-color:#ff8135;">
+                    商家名称
+                </div>
+                <div style="width: 30%;height: 50px;position: absolute;top: 160px;left: 314px;background-color:#36ff29;">
+                    所属地区
+                </div>
+
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+            <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+                <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+            </div>
+
+        </div>
+    </div>
+    <!--<div class="tab-pane fade in active" id="food">-->
+    <!--<p>吃</p>-->
+    <!--</div>-->
+    <div class="tab-pane fade" id="food" style="overflow: hidden;position:relative;top: 0px;left: 0px">
+        <p>吃</p>
+        <div style="width: 100%;height: 250px;background-color:#46ff3c;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:#46ff3c;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:#46ff3c;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="hotel" style="overflow: hidden;position:relative;top: 0px;left: 0px">
+        <p>住</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="traffic">
+        <p>行</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="travel" style="overflow: hidden;position:relative;top: 0px;left: 0px">
+        <p>游</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="shopping">
+        <p>购</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="entertainment">
+        <p>娱</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="m500">
+        <p>500</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="m1000">
+        <p>1000</p>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+        <div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">
+            <div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="m5000">
+        <p>5000</p>
+    </div>
+    <div class="tab-pane fade" id="m10000">
+        <p>10000</p>
+    </div>
+    <div class="tab-pane fade" id="m15000">
+        <p>15000</p>
+    </div>
+    <div class="tab-pane fade" id="m20000">
+        <p>20000</p>
+    </div>
+    <div class="tab-pane fade" id="nouse">
+        <p>未使用票</p>
+
+    </div>
+    <div class="tab-pane fade" id="usedtk">
+        <p>已使用票</p>
+    </div>
+    <div class="tab-pane fade" id="datedtk">
+        <p>已过期票</p>
+    </div>
+    <div class="tab-pane fade" id="noUseArch">
+        <p>未使用券</p>
+    </div>
+    <div class="tab-pane fade" id="usedArch">
+        <p>已使用券</p>
+
+    </div>
+    <div class="tab-pane fade" id="datedArch">
+        <p>已过期券</p>
+    </div>
+</div>
+<script src="view/bootstrap/js/bootstrap.min.js"></script>
+<script src="view/bootstrap/js/jquery-3.2.0.min.js"></script>
+<script src="view/js/jquery.lazyload.min.js"></script>
+<script src="pages/NewCoin/main.js"></script>
+<script>
+    var dv = document.getElementById('dv'), oy;
+
+    function mousemove(e) {
+        e = e || window.event;
+        dv.scrollTop += -(e.clientY - oy) / 15;
+    }
+
+    function mouseup() {
+        dv.className = '';
+        dv.onmouseup = dv.onmousemove = null;
+    }
+
+    dv.onmousedown = function (e) {
+        dv.onmousemove = mousemove;
+        dv.onmouseup = mouseup;
+        e = e || window.event;
+        oy = e.clientY;
+        dv.className = 'noselect';
+    }
+    $(function () {
+//       var list =  {"page":1,"pagesize":8}
+        var shop = {"shoptype": "1", "cityid": "520602", "keyword": "花", "currentpage": 1, "orderby": "shopname"}
+//        alert("lazyload")
+        $.ajax({
+            url: "http://114.115.149.80/sys/v1/getallshop",
+//            data:{"page":1,"pagesize":8},
+//            data: JSON.stringify(shop),
+            data: shop,
+//            beforeSend: function (request) {
+//                request.setRequestHeader("Authorization", getToken());
+//            },
+            type: 'POST',
+            dataType: 'JSON',
+            success: function (data) {                    //r为返回值
+                if (data.status == 'success') {
+                    alert('成功请求')
+//                        var shop_data=[];
+                    var str = ''
+                    for (var i = 0 in data.data.shopinfo) {
+//                            tmp.shopid=data.data.shopinfo[i].shopid;
+//                            tmp.shoptype=data.data.shopinfo[i].shoptype;
+//                            tmp.imgurl=data.data.shopinfo[i].imgurl;
+//                            tmp.shopname=data.data.shopinfo[i].shopname;
+//                            tmp.shoplevel=data.data.shopinfo[i].shoplevel;
+//                            tmp.pjpersons=data.data.shopinfo[i].pjpersons;
+//                            tmp.lng=data.data.shopinfo[i].lng;
+//                            tmp.lat=data.data.shopinfo[i].lat;
+//                            shop_data.push(tmp);
+//                            console.log(tmp)
+                        str += '<div style="width: 100%;height: 250px;background-color:blue;margin-bottom: 10px;margin-top: 10px;position:relative;top: 0px;left: 1px">'
+                        str += '<div style="width: 30%;height: 250px;position: absolute;top: 0px;left: 0px;background-color:#fff;">'
+                        str += '<img src="" alt=""></div>'
+                        str += '<div style="width: 30%;height: 50px;position: absolute;top: 30px;left: 314px;background-color:#ff8135;">' + data.data.shopinfo[i].shopname + '</div>'
+                        str += '<div style="width: 30%;height: 50px;position: absolute;top: 160px;left: 314px;background-color:#36ff29;">' + data.data.shopinfo[i].shoplevel + '</div>'
+
+                        str += '</div>'
+                        $('#indexPage').html(str)
+                    }
+                }
+            }
+        });
+    });
+</script>

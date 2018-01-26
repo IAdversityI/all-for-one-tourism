@@ -1,0 +1,73 @@
+<style>
+    .title {
+        color: white;
+        width: 1000px;
+        height: 1150px;
+        /*font-size: 50px;*/
+        /*color: #e7e7e7;*/
+    }
+</style>
+
+<div class="Title">
+    <p>欢迎来到便利扣页面，请先登录</p>
+</div>
+<div style="width:100%;margin: 250px auto">
+    <ul class="mar0" style="-width: 70%;background-color:green;">
+        <li class='h6' style="text-align: center;-width: 100%; height: 100px;">
+            <span style="color: white">用户名 :</span>
+            <input style="width: 600px;height:60px;" type="text" name="" id="uid" value=""/>
+        </li>
+        <li class='h6' style="text-align: center;width: 100%; height: 100px;">
+            <span style="color: white">密 码 :</span>
+            <input style="width: 600px;height:60px;" height="20" type="text" name="" id="pwd" value=""/>
+        </li>
+        <li style="text-align: center"><input type="button" style="width: 200px;height:50px;" id="loginCoin"
+                                              value="登录"/></li>
+    </ul>
+</div>
+<script src="view/js/jquery-2.1.3.min.js"></script>
+<script src="pages/NewCoin/main.js"></script>
+<script>
+
+    var login = document.getElementById("loginCoin")
+    login.onclick = function () {
+        alert("已点击")
+        var uid = $("#uid").val();
+        var pwd = $("#pwd").val();
+        console.log(uid)
+        console.log(pwd)
+        $.ajax({
+            url: "http://114.115.149.80:8085/tmc/v1/login",
+            data: {
+                userName: uid,
+                passWord: pwd
+            },
+            dataType: "json",
+            type: 'POST',
+            dataType: 'JSON',
+            success: function (data) {                    //r为返回值
+                if (data.status == 0) {
+                    alert('已登录')
+                    // alert(data.data.jwtToken)
+                    setToken(data.data.jwtToken)
+                    getToken();
+                    load('pages/NewCoin/index.html', ' plk')
+                }
+                if (data.status == 40081) {
+                    if (checkNull2(uid)) {
+                        //ajax提交数据
+                    } else {
+                        alert('用户id不能为空')
+                    }
+                    if (checkNull2(pwd)) {
+                        //ajax提交数据
+                    } else {
+                        alert('密码不能为空')
+                    }
+//                    alert("登陆失败或密码错误或帐户被禁用");
+                }
+            }
+        });
+    }
+
+</script>

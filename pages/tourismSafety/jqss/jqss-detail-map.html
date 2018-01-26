@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>实时景区列表</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="jqssdetail_map.css" rel="stylesheet"> 
+  </head>
+  <body class="containerdiv">
+  <div class="container ">
+    <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-12 search">
+            <!--<button id="listpage" type="button" class="btn btn-success but" onclick="listpage()">返回列表</button> -->
+            <!--<button id="listpage" type="button" class="btn btn-success  backbtn">返回</button>-->
+            </div>
+        </div>
+         <div id="jqsslist" class="row">
+          </div><!--/row-->
+          <div class="row">
+          <div class="col-xs-12 col-sm-12" id="sidebar">
+               
+            </div><!--/.sidebar-offcanvas-->
+          
+            <div class="col-xs-12 col-sm-12">              
+              <div  id="imgs" class="col-sm-2 col-xs-12"></div>   
+              <br>  
+              <div  id="imgs1" class="col-sm-2 col-xs-12"></div>                   
+            </div><!--/.col-xs-12.col-sm-9-->    
+            
+            
+             
+        </div>
+
+    </div><!--/.container-->
+    
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../dragstart.js"></script>
+    <script type="text/javascript">
+  //禁止全选
+    $("body").bind("selectstart", function(){
+        return false;
+    });
+    
+    function listpage(){
+        //window.location.href='../../sssjlist.shtml?city=520300';
+    }
+    
+    function GetQueryString(name)
+    {
+         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+         var r = window.location.search.substr(1).match(reg);
+         if(r!=null)return  unescape(r[2]); return null;
+    }
+    
+    function getDetailed(){
+        //alert(window.location.search);
+        layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>",{icon:16,time:0});
+        $.ajax({
+            url : "http://220.197.219.244:8088/travel/classification/getObjectInfo",
+            data:{
+                "oId":GetQueryString("oId"),    
+            },
+            type:'post',
+            dataType:'jsonp',
+            success:function(data){
+               //console.log("kw="+GetQueryString("kw"));
+                //console.log("uid="+GetQueryString("oId"));
+            
+                var htmlInfo="";
+                htmlInfo += "<p class='title'>" + data.info.objectName + "</p>";
+                htmlInfo += "<p><span class='labelt'>景区类型：</span>" + data.info.typeName + "</p>";
+                htmlInfo += "<p><span class='labelt'>所属区域：</span>" + data.info.cityName + data.info.areaName +"</p>";
+                htmlInfo += "<p><span class='labelt'>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>" + data.info.address +  + "</p>";
+                htmlInfo += "<p><span class='labelt'>如何到达：</span>" + data.info.roadWay + "</p>";
+                htmlInfo += "<p><span class='labelt'>承载人数：</span>" + data.info.amount + "</p>";
+                htmlInfo += "<p><span class='labelt'>联系电话：</span>" + data.info.tel + "</p>";
+                htmlInfo += "<p><span class='labelt'>移动电话：</span>" + data.info.mobile + "</p>";
+                htmlInfo += "<p><span class='labelt'>景区介绍：</span>"+ data.info.introduction + "</p>";
+                
+                $("#sidebar").html(htmlInfo);
+                
+                if(data.images[0] != "undefined" && data.images[0] != null){
+                     var htmlImg = "<img src='" + data.images[0].path + "' width='100%'   />";
+                    $("#imgs").html(htmlImg);
+                }
+                if(data.images[1] != "undefined" && data.images[1] != null){
+                     var htmlImg1 = "<img src='" + data.images[1].path + "' width='100%' />";
+                     $("#imgs1").html(htmlImg1);
+                 }                
+                
+                 layer.closeAll();
+                  //$("#listpage").attr("onclick","window.location.href='../../sssjlist.shtml?city="+data.info.cityId+"';");
+                  //console.log($("#listpage").onclick);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus);
+                layer.closeAll();
+            }
+        });
+        
+        //console.log("kw="+GetQueryString("kw"));
+         // console.log("kw=2"+decodeURI(decodeURI(GetQueryString("kw"))));
+       $.ajax({
+                url : 'http://220.197.219.244:8088/travel/classification/getRealTimeInfo',
+                data:{
+                    "objectType":"jq_class",   //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+                    "pageNo" : 1,
+                    "pageSize" : 5,
+                    //"keyword": GetQueryString("kw")
+                    "keyword": decodeURI(decodeURI(GetQueryString("kw")))
+                },
+                type:'post',
+                dataType:'jsonp',
+                success:function(json){  
+                   // for(var i = 0;i<infos.length;i++){
+                       //console.log("done");
+                       var i=0;
+                       var html='';
+                       $.each(json.info,function(){
+                        var uId=this.uId;  
+                       html += "<div class='col-xs-12 ' >";
+                            
+                        html += "<div class='col-xs-12'>";
+                        html += "<p align='center'><img src='" + this.headUrl + "' width='35%'    class='radimg'></p>";
+                        html += "<p align='center' class='title'>" +this.objectName  + "</p>";
+                        html += "<p align='center' class='labelt'>最新消息</p>";
+                        html += "</div>";
+                        
+                        html += "<div class='col-xs-12'>";  
+                        
+                        html += "<div  class='col-xs-4'  >";
+                        html += "<input  type='hidden' value='" + this.ssdName +"'/>";
+                        html += "<p align='center' width='80px' class='labelt'>温度提示<p>";
+                        html += "<p align='center'><img src='" + this.ssdUrl +"' width='100%'  ></p>";
+                        html += "<p align='center'>" + this.ssdName +"</p>";
+                        html += "</div>";
+                        
+                        html += "<div  class='col-xs-4'  >";
+                        html += "<input  type='hidden' value='" +this.klName + "'/>";
+                        html += "<p align='center' class='labelt'>客流拥挤<p>";
+                        html += "<p align='center'><img src='" +this.klUrl +"' width='100%'  ></p>";
+                        html += "<p align='center'>" + this.klName +"</p>";
+                        html += "</div>";
+                        
+                        html += "<div  class='col-xs-4'  >";
+                        html += "<input  type='hidden' value='" +this.cwName  + "'/>";
+                        html += "<p align='center' class='labelt'>车位密度<p>";
+                        html += "<p align='center'><img src='" +this.cwUrl +"' width='100%'  ></p>";
+                        html += "<p align='center'>" + this.cwName +"</p>";
+                        html += "</div>";
+                        
+                        html += "</div>";
+                        
+                        html += "<div class='col-xs-12'>";
+                      
+                        html += "<p class='labelt'>通知公告: <spanclass='tiitle'>"+this.publishTime +"</span></p>";
+                        //html += "<p class='tiitle'>" +this.publishTime +"</p>";
+                        //if(this.content.length > 25){
+                        //    html += "<p  >" + infos[i].content.substring(0,24) + "..." + "</p>";
+                       // }else{
+                            html += "<p  >"  + this.content + "</p>";
+                      //  }
+                         html += "<input  type='hidden' value='" +this.content + "'/>";
+                        //infos[i].content
+                        //html += "<p><button type='button' class='btn btn-warning' style='text-align:center;width:150px' onclick='detailJq(" + infos[i].uId + ")'>更多请点击</button></p>";
+                        html += "</div>";
+                        
+                        html += "<div class='col-md-2 col-xs-12'><p class='labelt'>即时图片<p>";
+                        if(this.images != "undefined" && this.images != null){
+                            var imglength =this.images.length;
+                            if(imglength >= 1){
+                                html += "<div class=''  >";
+                                html += "<p align='center'><img src='" + this.images[0].fileUrl + "' width='110px' height='110px'></p>";
+                                
+                                var photoDiv = "<div id='photoDiv" + i + "' style='display:none'>";
+                                photoDiv += "{'title' :''," +
+                                "'id':'photo" + i + "'," + 
+                                "'start':'0'," +
+                                "'data':["
+                                for(var j=0;j<imglength;j++){
+                                    photoDiv += "{'pid':'img"+ j +"'," +
+                                            "'src' : '" + this.images[j].fileUrl + "'" +
+                                             "}";
+                                    if(j+1 != imglength){
+                                        photoDiv += ",";
+                                    }
+                                }
+                                photoDiv += "]}</div>";
+                             
+                                html += photoDiv;
+                                html += "</div>";
+                            }
+                        }else{
+                            html += "<p align='center'>暂无！</p>";
+                        }
+                        html += "</div></div>";  
+                         });
+                    $('#jqsslist').html(html);
+                    layer.closeAll();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                     alert(textStatus);
+                     layer.closeAll();
+                     console.log("false");
+                 }
+            });
+        
+         
+    }
+    
+    getDetailed();
+    </script>
+    
+
+  </div>
+  </body>
+</html>

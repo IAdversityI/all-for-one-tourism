@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>本机便利券</title>
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+     <link href="../../view/js/layer/skin/layer.css" rel="stylesheet"> 
+     
+  </head>
+  <body class="containerdiv">
+ <h1 class="text-center">便利券领取</h1> 
+   <div class="xytinfo">
+<!-- <p style="font-size: 40px; margin-top:320px; font-family:微软雅黑;">内   容   更   新   中  . . .</p> -->
+   <div id="main">    
+    <div class="demo">
+        <div class="box">
+            <img src="view/images/blk/quan1.jpg"  >
+            <!-- <h4>¥<span>3499.00</span></h4> -->            
+            <div class="button orange2 addcar">领 票</div>
+        </div>
+        <div class="box">
+            <img src="view/images/blk/quan2.jpg"  > 
+            <a href="#" class="button orange2 addcar" onclick="dqbtn()">领 票</a>
+        </div>
+        <div class="box">
+            <img src="view/images/blk/quan3.jpg"  >     
+             
+            <a href="#" class="button orange2 addcar">领 票</a>
+        </div>
+        <div class="box">
+            <img src="view/images/blk/quan4.jpg"  >
+            <a href="#" class="button orange2 addcar">领 票</a>
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="m-sidebar">
+        <div class="cart">
+            <i id="end"> </i>
+             <!-- <span>购物车</span>   -->
+        </div>
+    </div>
+    <div id="msg">已领入便利扣</div>
+    
+    <div>
+   <form   method="post">  
+  <p> <input type="text" name="num" autofocus /></p> 
+  <input type="submit" value="Submit" />
+</form>
+    </div>
+            
+<!--  <img src="view/images/blk/quan1.jpg"  />
+  <img src="view/images/blk/quan2.jpg"  />
+ <img src="view/images/blk/quan3.jpg"  />
+  <img src="view/images/blk/quan4.jpg"  /> -->
+
+</div> 
+ 
+
+ 
+    
+   
+    <script type="text/javascript" src="../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../view/js/layer/layer.js"></script>  
+<script src="../../view/js/jquery.fly.min.js"></script>
+<script>
+
+
+layer.config({
+    extend: 'extend/layer.ext.js'
+});    
+ 
+$(function() {
+    var offset = $("#end").offset();
+    $(".addcar").click(function(event){
+        layer.msg('请靠近感应区', function(){
+//关闭后的操作
+});
+        
+        
+        
+// layer.prompt({
+    // title: '输入任何口令，并确认',
+    // formType: 1 ,//prompt风格，支持0-2
+    // //time:2
+// }, function(pass){
+//      
+        // layer.msg(' 打个酱油', {icon: 4});
+    // });
+ });
+  
+  
+  
+  //票卡券动画
+    function pkq(){
+    var addcar = $(this);
+        var addoffset=$(this).offset();
+        var img = addcar.parent().find('img').attr('src');
+        var flyer = $('<img class="u-flyer" src="'+img+'">');
+        flyer.fly({
+            start: {
+                // left: event.pageX,
+                // top: event.pageY
+               left: addoffset.left/2,
+               top: addoffset.top
+            },
+            end: {
+                left: offset.left+10,
+                top: offset.top+10,
+                width: 150,
+                height:50
+            },
+            onEnd: function(){
+                $("#msg").show().animate({width: '250px'}, 500).fadeOut(3000);
+                addcar.css("cursor","default").removeClass('orange2').unbind('click');
+                this.destory();
+            }
+        });
+ 
+}    
+  
+}); 
+  //禁止全选
+    $("body").bind("selectstart", function(){
+        return false;
+    });
+        
+        
+//      
+   // $(".addcar").click(function(event){        
+ // layer.prompt({
+    // formType: 2,
+    // value: '初始值',
+    // title: '请输入值'
+// }, function(value, index, elem){
+    // alert(value); //得到value
+    // layer.close(index);
+// });
+// 
+// });
+        
+       
+    </script>
+    
+    </body>
+</html>

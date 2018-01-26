@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>二级联动</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<form action="" name="aboutCity" id="form1">
+    <select id="province" name="province">
+        <option value="none">--请选择省--</option>
+
+    </select>
+
+    <select id="city" name="city">
+        <option value="none">--请选择市--</option>
+    </select>
+</form>
+<script src="../../view/js/jquery-1.10.2.min.js"></script>
+<!-- 载入省市数据 -->
+<script type="text/javascript">
+    $.get('second.json').done(function (data) {
+        var china = data.rows;
+        var province = document.getElementById("province");
+        //遍历省市数据,并把里面省的数据追加到option选项中
+        for (var i = 0; i < china.length; i++) {
+            var option = document.createElement("option");
+            // console.log(option)
+            option.value = china[i].p_id;
+            option.innerHTML = china[i].p_name;
+            province.appendChild(option);
+        }
+        //省级下拉框发生改变事件
+        province.onchange = function () {
+            //获取当前点击对象的值
+            var proid = this.value;
+            var cities;
+            //遍历省市数据,把省级下点击的那一个选项的值和省市数据中的
+            //省级数据对比,如果相等,取出当前的市的数据
+            for (var i = 0; i < china.length; i++) {
+                if (proid == china[i].p_id) {
+                    cities = china[i].cities;
+                }
+                console.log(proid)
+                // console.log(cities)
+
+            }
+            //获得市级下拉框对象
+            var city = document.getElementById("city");
+            //每次点击省级后,市级初始化,避免高级重复追加
+            city.innerHTML = "<option value='none'>--请选择市--</option>";
+            //遍历市级数据,并取出市级数据,追加到市级对象中
+            for (var i = 0; i < cities.length; i++) {
+                var option = document.createElement("option");
+                option.innerHTML = cities[i].name;
+                option.value = cities[i].id;
+                city.appendChild(option);
+            }
+        }
+        city.onchange = function () {
+            //获取当前点击对象的值
+            var cityid = this.value;
+            console.log(cityid)
+        }
+    });
+
+</script>
+
+</body>
+</html>

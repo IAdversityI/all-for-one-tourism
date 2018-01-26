@@ -1,0 +1,92 @@
+<style>
+    .TitleHotel {
+        -background: #33526A;
+        width: 100%;
+        line-height: 100px;
+        font-family: 方正超粗黑简体;
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .noselect {
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        user-select: none;
+    }
+</style>
+<div class="TitleHotel">
+    <p>FAST“天眼”到底能看多远</p>
+</div>
+<div data-spy="scroll" data-target="#navbar-example" data-offset="0"
+     style=" width:1060px;height:1050px;overflow:auto; position: relative;top:-20px;z-index:1;"
+     onselectstart="return false"
+     id="dv">
+    <div style=" width:1000px;height:1050px; position: relative;top:-20px;left: 0px">
+    <!--<div id="picContent" style="width: 1000px;height: auto">-->
+        <img  class="pic1" src="view/images/ptlvfa/shunxu1.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu2.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu3.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu4.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu5.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu6.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu7.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu8.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu9.jpg" style="width: 960px" alt="">
+        <img  class="pic1" src="view/images/ptlvfa/shunxu10.jpg" style="width: 960px" alt="">
+    <!--</div>-->
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+
+        var t=0;
+
+        $('.pic1').each(function() {
+            $(this).load(function () {
+                t++;
+                if(t==10){
+                    //alert($('#dv')[0].scrollHeight);
+                    $('#dv').scrollTop($('#dv')[0].scrollHeight);
+                }
+            });
+        })
+    });
+
+</script>
+<!--</div>-->
+<!--<script src="view/js/slide.js"></script>-->
+<script>
+    //    var timer = null; // 定时器名称
+    var dv = document.getElementById('dv'), oy;
+    var picContent = document.getElementById('picContent')
+
+    //picContent.scrollTop(picContent.offsetHeight);
+    function mousemove(e) {
+//        $('#dv').scrollTop($('#dv')[0].scrollHeight);
+        e = e || window.event;
+        dv.scrollTop += (e.clientY - oy) / 15;
+//        console.log(picContent.offsetHeight-oy )
+    }
+
+    function mouseup() {
+        dv.className = '';
+        dv.onmouseup = dv.onmousemove = null;
+
+    }
+
+    dv.onmousedown = function (e) {
+        dv.onmousemove = mousemove;
+        dv.onmouseup = mouseup;
+        e = e || window.event;
+        oy = e.clientY;
+        //console.log(oy)
+        dv.className = 'noselect';
+
+    }
+
+</script>
+
+

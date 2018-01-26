@@ -1,0 +1,317 @@
+<div class="Title">	 
+	<p> 身边天气  </p> 
+	
+
+</div>
+
+<div class="weather">
+	<ul id="weather-items">
+		<li class="green">
+		<div class="place">
+			<div id="weather_palce1">
+			</div>
+			<div id="wobble_container" style="width: 480px;">
+				<div class="labels">
+					<span class="label"><span class="text">10分钟</span></span>
+					<span class="label"></span>
+					<span class="label"><span class="text">30分钟</span></span>
+					<span class="label"></span>
+					<span class="label"><span class="text">50分钟</span></span>
+					<span class="label last"></span>
+				</div>
+				<canvas id="wobble_canvas1" width="480" height="150" style="width: 480px; height: 150px;"></canvas>
+				
+				<div class="intensity_labels">
+					<div class="heavy"><span>大雨</span></div>
+					<div class="med"><span>中雨</span></div>
+					<div class="light"><span>小雨</span></div>
+				</div>
+			</div>
+		
+		</div>
+		</li>
+		<li class="blue">
+			<div class="place">
+				<div id="weather_palce2">
+				<!--	<div class="name">黄果树</div>
+					<div class="temperature"><img></img>33°</div>
+					<div class="precipitation">未来一小时（降水概率）</div>
+					<div class="precipitation">未来一小时不会下雨，放心出门吧</div>-->
+				</div>
+				
+				<div id="wobble_container" style="width: 465px;">
+					<div class="labels">
+						<span class="label"><span class="text">10分钟</span></span>
+						<span class="label"></span>
+						<span class="label"><span class="text">30分钟</span></span>
+						<span class="label"></span>
+						<span class="label"><span class="text">50分钟</span></span>
+						<span class="label last"></span>
+					</div>
+					<canvas id="wobble_canvas2" width="465" height="150" style="width: 465px; height: 150px;"></canvas>
+					
+					<div class="intensity_labels">
+						<div class="heavy"><span>大雨</span></div>
+						<div class="med"><span>中雨</span></div>
+						<div class="light"><span>小雨</span></div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	
+	
+	
+	<div class="weather_button">
+		<div onclick='encasedWeather("天眼景区","tianyan","106.85583,25.647222","weather_palce1","wobble_canvas1","icon1",false);'><span>天眼</span></div>
+		<div onclick='encasedWeather("天坑","tiankeng","106.8605400000,25.6508400000","weather_palce1","wobble_canvas1","icon1",false);'><span>天坑</span></div>
+		<div onclick='encasedWeather("天书","tianshu"," 106.8684660000,25.7241510000","weather_palce1","wobble_canvas1","icon1",false);'><span>天书</span></div>
+		<!--<div onclick='encasedWeather("平塘","pingtang","107.324262,25.830635","weather_palce1","wobble_canvas1","icon1",false);'><span>平塘</span></div>-->
+		<!--<div onclick='encasedWeather("黄果树","huangguoshu","105.66669,25.981954","weather_palce1","wobble_canvas1","icon1",false);'><span>黄果树</span></div>-->
+		<!--<div onclick='encasedWeather("龙宫","longgong","106.705801,26.574336","weather_palce1","wobble_canvas1","icon1",false);'><span>龙宫</span></div>-->
+		<!--<div onclick='encasedWeather("荔波","libo","106.70769,26.584494","weather_palce1","wobble_canvas1","icon1",false);'><span>荔波</span></div>-->
+		<div onclick='encasedWeather("平塘县","pingtangxian","107.324262,25.830635","weather_palce1","wobble_canvas1","icon1",false);'><span>平塘县</span></div>
+		<div onclick='encasedWeather("平塘掌布风景区","keduzheng","107.0772400000,26.0204200000","weather_palce1","wobble_canvas1","icon1",false);'><span>平塘掌布风景区</span></div>
+		<!--<div onclick='encasedWeather("荔波小七孔景区","libo","107.711182,25.255505","weather_palce1","wobble_canvas1","icon1",false);'><span>荔波小七孔景区</span></div>-->
+		<!--<div onclick='encasedWeather("三都县咕噜景区","sanduxian","107.883933,25.923121","weather_palce1","wobble_canvas1","icon1",false);'><span>三都县咕噜景区</span></div>-->
+		<!--<div onclick='encasedWeather("荔波樟江风景名胜区","libozhangjiang","107.753751,25.255867","weather_palce1","wobble_canvas1","icon1",false);'><span>荔波漳江</span></div>-->
+		<div onclick='encasedWeather("都匀","duyun","107.53,26.72","weather_palce1","wobble_canvas1","icon1",false);'><span>都匀</span></div>
+
+		<!--&lt;!&ndash; <div onclick='encasedWeather("遵义","zunyi","106.670772,26.631505","weather_palce1","wobble_canvas1","icon1",false);'><span>遵义</span></div> &ndash;&gt;-->
+		<!--<div onclick='encasedWeather("万峰林","wanfenglin","104.968373,24.954901","weather_palce1","wobble_canvas1","icon1",false);'><span>万峰林</span></div>-->
+		<!--<div onclick='encasedWeather("织金洞","zhijindong","105.770542,26.66345","weather_palce1","wobble_canvas1","icon1",false);'><span>织金洞</span></div>-->
+		
+	</div>
+	<div class="clear"></div>
+</div>
+
+<script type="text/javascript" > 
+ 
+   $('.weather_button div span').click( function () { 
+   //$(this).hide();    
+   
+    var ti=$(this).parents().siblings('div');  
+    $('.weather_button div span').css('background','rgba(0, 0, 0, 0)');
+    $(this).css('background','rgba(123, 204, 238, 0.8)');
+    
+   });
+   
+    
+
+   var lineTime1;
+   var lineTime2;
+	//getLocation();
+	
+	//var data = [0,20,21,22,22,20,25,12,40,50,6,33,0,0,0,0,122,23,65,86,24,33,23,43,33,44,55,66,44,33,22,11,22,33,44,55,66,77,55,44,33,44,55,66,77,55,55,55,66,0,0,0,0,0,0,0,0,0,0];
+	//var data = [0.1504040044,0.1504040044,0.1504040044,0.1504040044,0.1554040044,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var j = 0;
+	var x = 0;
+	function getWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal){
+		//获取本地天气
+		 $.ajax({
+		    url:"http://caiyunapp.com/fcgi-bin/v1/api.py",
+		    data:{    
+		         "lonlat" : lonlat,
+		         "format" : "json",
+		         "product" : "minutes_prec",
+		         "token" : "937O-iMi-cr2=lkX"
+		    },
+		    type:'post',
+		    dataType:'jsonp',
+		    success:function(data) {
+		    	//localStorage.setItem(nameEn,JSON.stringify(data));
+		    	createCavcas(data,nameCn,placeId,cavcasId,iconId,isLocal);
+		     },
+		     error : function() {
+		        createError(placeId,"暂时不能连接网络。");
+		     }    
+		});
+	}
+	
+	
+	function encasedWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal){
+		if(isLocal){
+			if(typeof(localStorage.getItem("localPosition"))!="undefined" &&localStorage.getItem("localPosition") != null){
+				getWeather(nameCn,nameEn,localStorage.getItem("localPosition"),placeId,cavcasId,iconId,isLocal);
+			}else{
+				createError(placeId,"暂时无法获取位置信息。");
+			}
+		}else{
+			getWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal);
+		}
+	}
+	
+	/*
+	function encasedWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal){
+		var weatherdata =  JSON.parse(localStorage.getItem(nameEn));
+		
+		if(typeof(weatherdata)!="undefined" && weatherdata != null){
+			
+			var date = new Date(Math.floor(weatherdata.server_time));
+			var now = new Date();
+			if(date.getHours()!=now.getHours()){
+				if(isLocal){
+					if(typeof(localStorage.getItem("localPosition"))!="undefined" &&localStorage.getItem("localPosition") != null){
+						getWeather(nameCn,nameEn,localStorage.getItem("localPosition"),placeId,cavcasId,iconId,isLocal);
+					}else{
+						createError(placeId,"暂时无法获取位置信息。");
+					}
+				}else{
+					getWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal);
+				}
+			}else{
+				createCavcas(weatherdata,nameCn,placeId,cavcasId,iconId,isLocal);
+			}
+		}else{
+			if(isLocal){
+				if(typeof(localStorage.getItem("localPosition"))!="undefined" &&localStorage.getItem("localPosition") != null){
+					getWeather(nameCn,nameEn,localStorage.getItem("localPosition"),placeId,cavcasId,iconId,isLocal);
+				}else{
+					createError(placeId,"暂时无法获取位置信息。");
+				}
+			}else{
+				getWeather(nameCn,nameEn,lonlat,placeId,cavcasId,iconId,isLocal);
+			}
+		}
+	}
+	*/
+	
+	function createCavcas(weatherdata,nameCn,placeId,cavcasId,iconId,isLocal){
+		var place = $("#" + placeId);
+		place.empty();
+		var date = new Date(weatherdata.server_time * 1000);
+		$("<div class='name'>" + nameCn  + "</div>").appendTo(place);
+		var temperature = $("<div class='temperature'>" + weatherdata.temp + "°</div>").appendTo(place);
+		var icon1 = $("<canvas id='"+ iconId + "'></canvas>").css({ "width": "100px","height": "64px"}).prependTo(temperature);
+		$("<div class='precipitation'>" + weatherdata.summary + "</div>").appendTo(place);
+		$("<div class='precipitation'>" + "当前时间：" + date.format("HH:MM") + "，未来一小时（降水概率）</div>").appendTo(place);
+		var skycons = new Skycons({"color": "#eee"});
+		skycons.add(iconId, weatherdata.skycon);
+		skycons.play();
+		
+		////未来一小时每分钟的降雨量，0.05-0.15是小雨，0.15-0.35是中雨, 0.35以上是大雨，根据不同地区情况可以有所调整
+		//var drawLine = 480/60;
+		//var drawHeight = 150/3;
+		if(isLocal){
+			clearInterval(lineTime2);
+			lineTime2 = null;
+			lineTime2 = setInterval(function(){draw2(cavcasId,weatherdata.dataseries);},500); 
+			//draw2(cavcasId,weatherdata.dataseries);
+		}else{
+			clearInterval(lineTime1);
+			lineTime1 = null;
+			//clearTimeout(lineTime);
+			lineTime1 = setInterval(function(){draw(cavcasId,weatherdata.dataseries);},500); 
+			//draw(cavcasId,weatherdata.dataseries);
+		}
+	}
+	
+	function createError(placeId,errorLog){
+		var place = $("#" + placeId);
+		place.empty();
+		$("<div class='errorLog'>" + errorLog + "</div>").appendTo(place);
+	}
+	
+	function draw(cavcasId,data){
+		j++;
+		if(j == 100){
+			j=0;
+		}
+		var canvas = document.getElementById(cavcasId);
+		if(canvas == null){
+			clearInterval(lineTime1);
+			lineTime1 = null;
+			return;
+		}
+		var context = canvas.getContext('2d');
+		
+		//context.font = '10px sans-serif';
+		context.clearRect(0, 0, 480, 150);
+		
+		var olddata = 147;
+		
+		for(var i=0;i<data.length;i++){
+			var newData = Math.round(1000*data[i].toFixed(2)/3);
+			//alert(newData);
+			if(newData != 0){
+				if(j%2 == 0){
+					newData = newData+1;
+				}else{
+					newData = newData-1;
+				}
+			}
+			//var data = Math.ceil(Math.random()*150);
+			context.beginPath();
+			//context.strokeStyle="#0044BB";
+			context.fillStyle="#0044BB";
+			//context.lineWidth = 2;
+			context.moveTo(8*i,olddata);
+			context.lineTo(8*(i+1),147-newData);
+			context.lineTo(8*(i+1),147);
+			context.lineTo(8*i,147);
+			context.lineTo(8*i,olddata);
+			context.fill();
+			//context.stroke();
+			olddata = 147-newData;
+		}
+	}
+	
+	
+	
+	function draw2(cavcasId,data){
+		x++;
+		if(x == 100){
+			x=0;
+		}
+		var canvas = document.getElementById(cavcasId);
+		if(canvas == null){
+			clearInterval(lineTime2);
+			lineTime2 = null;
+			return;
+		}
+		var context = canvas.getContext('2d');
+		
+		context.clearRect(0, 0, 480, 150 );
+
+		var olddata = 147;
+		for(var i=0;i<data.length;i++){
+			var newData = Math.round(1000*data[i].toFixed(2)/3);
+			if(newData != 0){
+				if(j%2 == 0){
+					newData = newData+1;
+				}else{
+					newData = newData-1;
+				}
+			}
+			context.beginPath();
+			context.fillStyle="#0044BB";
+			context.moveTo(8*i,olddata);
+			context.lineTo(8*(i+1),147-newData);
+			context.lineTo(8*(i+1),147);
+			context.lineTo(8*i,147);
+			context.lineTo(8*i,olddata);
+			context.fill();
+			olddata = 147-newData;
+		}
+	}
+	//encasedWeather("荔波","libo","106.70769,26.584494","weather_palce1","wobble_canvas1","icon1",false);
+//	 encasedWeather("黄果树","huangguoshu","105.66669,25.981954","weather_palce1","wobble_canvas1","icon1",false);
+//   <div onclick='encasedWeather("平塘","pingtang","107.55,25.83","weather_palce1","wobble_canvas1","icon1",false);'><span>平塘</span></div>
+//   	 encasedWeather("平塘","pingtang","105.66669,25.981954","weather_palce1","wobble_canvas1","icon1",false);
+//       encasedWeather("本地天气","localData","106.656722,26.622973","weather_palce2","wobble_canvas2","icon2",true);
+   encasedWeather("天眼","tianyan","106.85583,25.647222","weather_palce1","wobble_canvas1","icon1",false);
+   encasedWeather("本地天气","localData","107.324262,25.830635","weather_palce2","wobble_canvas2","icon2",true);
+	/*
+		$.ajax({
+		    url:"file:///c:/weather.txt",
+		    type:'post',
+		    dataType:'jsonp',
+		    success:function(data) {
+		    	alert(data.name);
+		     },
+		     error : function(e) {
+		       alert(e);
+		     }
+		});
+		*/
+</script>

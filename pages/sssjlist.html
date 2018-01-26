@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实时信息</title>
+<link href="../view/css/common.css" rel="stylesheet">
+<link rel="stylesheet" href="../view/ammap/ammap.css" type="text/css">
+<link rel="stylesheet" href="../view/css/maplist.css" type="text/css">
+    <!--<link rel="stylesheet" href="sssj/jqss/jqsslist.css" type="text/css">-->
+<script src="../view/js/jquery-1.10.2.min.js"></script>
+    <!--<script src="../view/js/index.js"></script>-->
+</head>
+<body style="background-image:none;margin:0px;padding:0px;overflow: auto;">
+<div>
+  <div class="blog-content" id="dataList"> </div>
+  <div class="blog-pagination">
+    <nav style="text-align:center;margin-top:5px;">
+      <ul class="pagination">
+        <li> <a href="javascript:SetPagenum();"  id="pageshow" style="color:#000000;">加载更多 <span class="fa fa-angle-right"> </span> </a> </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!--<script type="text/javascript">dsdsd</script>-->
+
+</body>
+
+<script type="text/javascript"> 
+function GetQueryString(name){
+  var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+  var r = window.location.search.substr(1).match(reg);
+  if(r!=null)return  unescape(r[2]); 
+  return null;
+  }
+var pagenum=1;
+function SetPagenum(){   pagenum++;    getlist();}
+
+function detailJq(page,progro){
+
+     //console.log(uid);
+    
+    // console.log("kw="+kw + "else="+encodeURI(kw)+"="+encodeURI(encodeURI(kw)) );
+    // encodeURI(encodeURI(kw)) ;
+    // window.location.href='sssj/jqss/jqss-detail-map.html?oId=' + uid+'&kw='+encodeURI(encodeURI(kw));
+
+    parent.loadjq(page,progro);
+}
+
+
+
+ 
+function getlist(){
+    $("#pageshow").html("加载中...");
+    var url="http://220.197.219.244:8088/travel/classification/getRealTimeInfo?objectType=jq_class&pageSize=5";
+    url+="&pageNo="+pagenum+"";
+    var city=GetQueryString("city");
+    var district=GetQueryString("district");
+    if(city>0) {
+        url += "&city=" + city + "";
+        //console.log(url);
+    }
+    if(district>0){
+        url+="&district="+district+"";
+    }
+    //console.log(url);
+
+        $.ajax({
+            type : "get", //jquey是不支持post方式跨域的
+            async:false,
+            url : url,
+            //跨域请求的URL
+            dataType : "jsonp",
+            //传递给请求处理程序，用以获得jsonp回调函数名的参数名(默认为:callback)
+            jsonp: "callback",
+            callback:"data",
+            //成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+            success : function(json){
+                var html = "";
+                //var jq_Url_a2=loadjq('pages/sssj/jqss/jqss-jq-detail.html?oId=211','211');
+                //console.log(json.info.length);
+                $.each(json.info,function(){
+
+                    html +="<a href='' onclick='detailJq(\"pages/sssj/jqss/jqss-jq-detail.html?oId="+this.uId+"\",\""+this.uId+"\")' ) ><div class='maplist' style='height:105px;'><div class='col-md-2' style='width:100px;float:left;'>";
+//   iframe框中显示的方式：
+//   html +="<a href='sssj/jqss/jqss-detail-map.html?oId="+this.uId+"&kw="+encodeURI(encodeURI(this.objectName))+"'><div class='maplist' style='height:105px;'><div class='col-md-2' style='width:100px;float:left;'>";
+                    html +="<p align='center'>";
+                    html +="<img src='"+this.headUrl+"' class='radimg' height='75' width='80'></p>";
+                    html +="<p class='title' align='center' style='font-size:12px;'>"+this.objectName+"</p></div><div style='float:left;'>";
+                    html +="<div style='float:left;margin:4px;'>";
+                    html +="<p align='center' style='font-size:11px;'>温度提示:<br/>"+this.ssdName+"</p>";
+                    html +="<p align='center'><img src='"+this.ssdUrl+"' width='40px'></p>";
+                    html +="</div>";
+                    html +="<div style='float:left;margin:3px;'>";
+                    html +="<p align='center' style='font-size:11px;'>客流:<br/>"+this.klName+"</p>";
+                    html +="<p align='center'><img src='"+this.klUrl+"' width='40px'></p>";
+                    html +="</div>";
+                    html +="<div style='float:left;margin:3px;'>";
+                    html +="<p align='center' style='font-size:11px;'>车位密度:<br/>"+this.cwName+"</p>";
+                    html +="<p align='center'><img src='"+this.cwUrl+"' width='40px'></p></div></div>";
+                    html +="<div style='float:left;width:110px'><p class='tiitle'>最新发布:</p>";
+                    html +="<p>"+this.publishTime+"</p>";
+                    html +="<p>"+this.content.substring(0,24)+"</p></div>";
+                    if(this.images){
+                        html +="<div class='col-md-2' style='width:auto;'><p align='center'>即时图片</p>";
+                        html +="<div><p align='center'>";
+                        html +="<a  href=''><img src='"+this.images[0].thumUrl+"' height='70px' width='70px'></a></p>";
+                        html +="<div id='photoDiv0' style='display:none'></div>";
+                        html +="</div></div>";
+                    }
+                    html +="</div></div></a>";
+                });
+                if(pagenum==1){
+                    $("#dataList").html(html);
+                }else{
+                    $("#dataList").append(html);
+                }
+                $("#pageshow").html("加载更多！");
+                if(json.info.length==0){
+                    $("#pageshow").html("没有可加载数据！");
+                }
+            }
+        });
+ }
+ getlist(); 
+</script>
+</html>

@@ -1,0 +1,175 @@
+
+
+<link href="pages/sssj/jqss/jqssdetail.css" rel="stylesheet">
+
+<div   class="containerdiv">
+
+	<div class="col-md-12">
+		<div class="row ">
+			<div class="col-md-12 search">
+	  		<!--<button type="button" class="btn btn-success but" onclick="hideMenu()">关闭</button>-->
+	  		<button type="button" class="btn btn-success but" onclick="javascript:$('#info').hide()">关闭</button>
+			</div>
+	  	</div>
+	
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <!-- <p>
+				<video width="400" height="400" id="video"  loop="loop"></video>
+			  </p>
+              <br> -->
+              <p id="imgs"></p>
+              <br>
+              <p id="imgs1"></p>
+	        </div><!--/.col-xs-12.col-sm-9-->
+	
+	        <div class="col-xs-6 col-sm-6" id="sidebar">
+
+	        </div><!--/.sidebar-offcanvas-->
+          </div><!--/row-->
+        </div>
+	</div>
+
+
+    <script type="text/javascript">
+
+		var num = GojqId;
+    
+    //function listpage(){
+		//window.location.href=' jqss-list.html';
+	//}
+	//alert(window.location.href);
+
+	//alert(window.location.search);
+	    //console.log("22="+GojqId);
+
+    function GetQueryString(name)
+    {
+         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+         var r = window.location.search.substr(1).match(reg);
+         if(r!=null)return  unescape(r[2]); return null;
+
+
+    }
+    
+    function getDetailed(){
+    	layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>",{icon:16,time:0});
+
+
+		$.ajax({
+			url : "http://220.197.219.244:8088/travel/classification/getObjectInfo",
+			data:{
+				  //"oId":GetQueryString("oId")   //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+				   "oId":num
+			},
+			type:'post',
+		    dataType:'jsonp',
+			success:function(data){
+				var htmlInfo="";
+				 htmlInfo += "<p class='title'>" + data.info.objectName + "</p>";
+				htmlInfo += "<p><span class='labelt'>景区类型：</span>" + data.info.typeName + "</p>";
+				htmlInfo += "<p><span class='labelt'>所属区域：</span>" + data.info.cityName + data.info.areaName +"</p>";
+				htmlInfo += "<p><span class='labelt'>地&nbsp;&nbsp;&nbsp;址：</span>" + data.info.address + "</p>";
+				htmlInfo += "<p><span class='labelt'>如何到达：</span>" + data.info.roadWay + "</p>";
+				htmlInfo += "<p><span class='labelt'>承载人数：</span>" + data.info.amount + "</p>";
+				htmlInfo += "<p><span class='labelt'>联系电话：</span>" + data.info.tel + "</p>";
+				htmlInfo += "<p><span class='labelt'>移动电话：</span>" + data.info.mobile + "</p>";
+				htmlInfo += "<div id='infodragArea' ><p>"+ data.info.introduction + "</p></div>";
+				
+				$("#sidebar").html(htmlInfo);
+				
+				if(data.images[0] != "undefined" && data.images[0] != null){
+					 var htmlImg = "<img src='" + data.images[0].path + "' width='400px' height='400px' />";
+					$("#imgs").html(htmlImg);
+				}
+				if(data.images[1] != "undefined" && data.images[1] != null){
+					 var htmlImg1 = "<img src='" + data.images[1].path + "' width='400px' height='400px' />";
+					 $("#imgs1").html(htmlImg1);
+			     }
+				 //var video = $("#video");
+				 //"http://220.197.219.244:8080/travel_resources/travelFile/2015/12/11/20151211153604574855.mp4"
+			     //video.attr("src",data.video);
+			     //video[0].play();
+			     layer.closeAll();
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+			 	//alert(textStatus);
+			 	layer.closeAll();
+				console.log("error="+url+'textStatus');
+			}
+		});
+		
+	}
+    
+     getDetailed();
+
+//		$(document).ready(function(){
+//			var $div = $("div#infodragArea");
+//			/* 绑定鼠标左键按住事件 */
+//			$div.bind("mousedown",function(event){
+//				/* 获取需要拖动节点的坐标 */
+//				var offset_x = $(this)[0].offsetLeft;//x坐标
+//				var offset_y = $(this)[0].offsetTop;//y坐标
+//				/* 获取当前鼠标的坐标 */
+//				var mouse_x = event.pageX;
+//				var mouse_y = event.pageY;
+//				/* 绑定拖动事件 */
+//				/* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+//				$(document).bind("mousemove",function(ev){
+//					/* 计算鼠标移动了的位置 */
+//					var _x = ev.pageX - mouse_x;
+//					var _y = ev.pageY - mouse_y;
+//					/* 设置移动后的元素坐标 */
+//					var now_x = (offset_x + _x ) + "px";
+//					var now_y = (offset_y + _y ) + "px";
+//					/* 改变目标元素的位置 */
+//					$div.css({
+//						top:now_y,
+//						left:now_x
+//					});
+//				});
+//			});
+//			/* 当鼠标左键松开，接触事件绑定 */
+//			$(document).bind("mouseup",function(){
+//				$(this).unbind("mousemove");
+//			});
+//		})
+
+
+
+
+
+
+		//$("#infodragArea").click(function (e) {console.log("move")});
+
+//			var isMouseDown = false; //鼠标是否按下
+//			var mouseDownPosiX;
+//			var mouseDownPosiY;
+//			var InitPositionX;
+//			var InitPositionY;
+//			var obj =$("#infodragArea");
+//			obj.mousedown(function (e) {
+////当鼠标按下时捕获鼠标位置以及对象的当前位置
+//				mouseDownPosiX = e.pageX;
+//				mouseDownPosiY = e.pageY;
+//				isMouseDown = true;
+//
+//				//InitPositionX = obj.css("left").replace("px", "");
+//				//InitPositionY = obj.css("top").replace("px", "");
+//
+//			}).mousemove(function (e) {
+////当鼠标按下并且移动时，首先判断鼠标是否在当前焦点，以及鼠标是否已经弹起，
+////				if ($(this).is(":focus") && isMouseDown) {
+////					var tempX = parseInt(e.pageX) - parseInt(mouseDownPosiX) + parseInt(InitPositionX);
+////					var tempY = parseInt(e.pageY) - parseInt(mouseDownPosiY) + parseInt(InitPositionY);
+////					obj.css("left", tempX + "px").css("top", tempY + "px");
+////				}
+////当鼠标弹起或者离开元素时，将鼠标弹起置为false，不移动对象
+//			}).mouseup(function () {
+//				isMouseDown = false;
+//			}).mouseleave(function () {
+//				isMouseDown = false;
+//			});
+
+
+    </script>

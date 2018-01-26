@@ -1,0 +1,56 @@
+<!--bootstrap版本-->
+<style>
+
+    .TitleHotel {
+        -background: #33526A;
+        width: 100%;
+        line-height: 100px;
+        font-family: 方正超粗黑简体;
+        font-size: 55px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .noselect {
+        -moz-user-select: none; /*火狐*/
+        -webkit-user-select: none; /*webkit浏览器*/
+        -ms-user-select: none; /*IE10*/
+        -khtml-user-select: none; /*早期浏览器*/
+        user-select: none;
+    }
+</style>
+<div class="TitleHotel">
+    <p>享美食</p>
+</div>
+<!--<div>-->
+<div data-spy="scroll" data-target="#navbar-example" data-offset="0"
+     style=" width:1060px;height:1030px;overflow:auto; position: relative;z-index:1;" onselectstart="return false"
+     id="dv">
+    <div style="position: relative;left: 0;width:1000px;height:1030px;">
+        <img src="view/images/ptlvfa/food.png"  alt="">
+    </div>
+</div>
+
+<script>
+    //    window.onload = function () {
+    var dv = document.getElementById('dv'), oy;
+
+    function mousemove(e) {
+        e = e || window.event;
+        dv.scrollTop = -(e.clientY - oy);
+    }
+
+    function mouseup() {
+        dv.className = '';
+        dv.onmouseup = dv.onmousemove = null;
+    }
+
+    dv.onmousedown = function (e) {
+        dv.onmousemove = mousemove;
+        dv.onmouseup = mouseup;
+        e = e || window.event;
+        oy = e.clientY;
+        dv.className = 'noselect';
+    }
+
+</script>

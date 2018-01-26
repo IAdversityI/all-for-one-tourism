@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>商家优惠</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../../view/js/laypage/skin/laypage.css">
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../my/jqsslist.css" rel="stylesheet">
+    <!--<script src="../../view/js/index.js"></script>-->
+
+</head>
+<body class="containerdiv" style="background: url(../img/qylvBg.png)">
+<div><h1 class="text-center">全域旅游活动商家</h1>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-12 search">
+                <button id="searchbtn1" type="button" class="btn btn-info but" onclick="openMenu('#companytype')">商家分类
+                </button>
+                <input id="searchinput1" type="hidden">
+                <button id="searchbtn4" type="button" class="btn btn-info but" onclick="openMenu('#dq')">所属区域</button>
+                <input id="searchinput4" type="hidden">
+                <input id="layerNums" type="hidden">
+                <input id="currentPage" type="hidden" value="1"/>
+            </div>
+        </div>
+        <div id="content" data-spy="scroll" data-target="#navbar-example" data-offset="0"
+             style=" width:1006px;height:1000px;overflow:auto; position: relative;top:10px;z-index:1;"
+             onselectstart="return false">
+            <div id="jqsslist">
+
+            </div><!--/row-->
+            <div class="row" style="height: 36px;line-height: 36px;">
+                <div id="layerpages" class="col-md-11 " align="right"></div>
+            </div>
+            <div style="position: relative;left: 0px;top:-100px">
+                <div type="button" class="btn btn-success but" onclick="listpage()">返回上一页</div>
+                <!--<div  type="button" class="btn btn-success but" onclick="load('pages/NewCoin/sjyh.html','jdss')">返回列表</div>-->
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</div><!--/.container-->
+
+<div id="companytype" style="padding: 30px;display: none;" class="klbtn">
+    <!--<span style='color:#000;font-size:20px;'>数据载入中,请稍后...</span>-->
+    <button id="shop0" type="button" class="btn btn-info but"
+            onclick="selectVal('searchbtn1','searchinput1','0','所属类型','全部')">全部
+    </button>
+    <button id="shop1" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','1','所属类型','吃')">吃
+    </button>
+    <button id="shop2" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','2','所属类型','住')">住
+    </button>
+    <button id="shop3" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','3','所属类型','行')">行
+    </button>
+    <button id="shop4" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','4','所属类型','游')">游
+    </button>
+    <button id="shop5" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','5','所属类型','购')">购
+    </button>
+    <button id="shop6" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn1','searchinput1','6','所属类型','娱')">娱
+    </button>
+</div>
+</div>
+
+
+<div id="dq" style="padding: 30px;display: none;" class="klbtn">
+    <button id="dq0" type="button" class="btn btn-info but"
+            onclick="selectVal('searchbtn4','searchinput4','','所属区域','所属区域')">全省
+    </button>
+    <button id="dq1" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520100','所属区域','贵阳')">贵阳
+    </button>
+    <button id="dq2" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520200','所属区域','六盘水')">六盘水
+    </button>
+    <button id="dq3" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520300','所属区域','遵义')">遵义
+    </button>
+    <button id="dq4" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520400','所属区域','安顺')">安顺
+    </button>
+    <button id="dq5" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520500','所属区域','毕节')">毕节
+    </button>
+    <button id="dq6" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520600','所属区域','铜仁')">铜仁
+    </button>
+    <button id="dq7" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','522300','所属区域','黔西南')">黔西南
+    </button>
+    <button id="dq8" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','522600','所属区域','黔东南')">黔东南
+    </button>
+    <button id="dq9" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','522700','所属区域','黔南')">黔南
+    </button>
+    <button id="dq10" type="button" class="btn btn-default but"
+            onclick="selectVal('searchbtn4','searchinput4','520602','所属区域','碧江区')">碧江区
+    </button>
+</div>
+<script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+<script type="text/javascript" src="../../../view/js/laypage/laypage.js"></script>
+<script type="text/javascript">
+    var urlImg = 'http://114.115.149.80:8085';
+    layer.config({
+        extend: 'extend/layer.ext.js'
+    });
+
+    //优惠信息展示
+    function getList() {
+        //参数处理
+        var companyTypeId = $("#searchinput1").val() == "" ? -1 : $("#searchinput1").val();
+        var cityId = $("#searchinput4").val() == "" ? -1 : $("#searchinput4").val();
+        layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>", {icon: 16, time: 0});
+        // var jqsslist = $("#jqsslist");
+        var currPageNum = $("#currentPage").val();
+        console.log(currPageNum)
+        var shop = {
+            "shoptype": companyTypeId,
+            "cityid": cityId,
+            "keyword": " ",
+            "currentpage": currPageNum,
+            "orderby": "shopname"
+        }
+        $.ajax({
+            url: "http://114.115.149.80/sys/v1/getallshop",
+            data: shop,
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == "success") {
+                    // for (var i = 0; i < data.data.pagecount; i++) {
+                    var loaddatashop = data;//将后台获取的json对象转换为数组
+                    console.log(data)
+                    loadDataShop(loaddatashop);
+                    layer.closeAll();
+                    // }
+                } else {
+                    document.getElementById('jqsslist').innerHTML = ' ';
+                    document.getElementById('layerpages').innerHTML = ' ';
+                    layer.closeAll();
+                    layer.msg(data.msg, {time: 2000});
+//                    document.getElementById('jqsslist').innerHTML
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus);
+//                document.getElementById('jqsslist').innerHTML= ' ';
+                layer.closeAll();
+            }
+        });
+
+    }
+
+    //全域旅游商家1206
+    function loadDataShop(data) {
+        var nums = 12; //每页出现的数量
+        // var pages = Math.ceil(data.data.shopinfo.length / nums);
+        // var pages = Math.ceil(data.data.totalcount / nums);
+        var pages = data.data.pagecount;
+
+//模拟渲染
+        var render = function (data, curr) {
+            // alert(12345)
+            var arr = [];
+            //var thisData = data.data.shopinfo.slice((curr - 1) * nums, curr * nums);
+            var thisData = data.data.shopinfo;
+            for (var i = 0; i < thisData.length; i++) {
+                // alert(1234511)
+                var str = ''
+                str += '<div class="shopName" style="width: 758px;height: 195px;background:url(../img/shoplist.png);margin:20px 0px;position:relative;top: 0px;left: 70px" onclick="detailJq(' + thisData[i].shopid + ')">'
+                str += '<div  style="width: 30%;height: 195px;position: absolute;top: 0px;left: 0px;">'
+                str += '<img style="position: absolute;top: 15px;left: 15px;" src="' + ImgUrl(urlImg + getImgURl(thisData[i].imgurl)) + '"  height="165px" width="165px" alt=""></div>'
+                str += '<div style="width: 70%;height: 195px;position: absolute;top: 0px;left: 229px;">' +
+                    '</div>'
+                str += '<div style="width: 300px;height: 50px;position: absolute;top: 30px;left: 314px;">' + thisData[i].shopname + '</div>'
+                str += '<div style="width: 100px;height: 50px;position: absolute;top: 128px;left: 314px;">' + thisData[i].shoplevel + '</div>'
+                str += '</div>'
+                arr.push(str);
+            }
+            return arr.join('');
+        };
+        laypage({
+            cont: 'layerpages'//分页显示的位置
+            , skin: '#87f2ff' //自定义选中色值
+            , pages: pages //得到总页数
+            , skip: false //开启跳页
+            , curr: $("#currentPage").val() || 1
+            , jump: function (obj, first) {
+                $("#currentPage").val(obj.curr);
+                console.log(obj.curr)
+                document.getElementById('jqsslist').innerHTML = render(data, obj.curr);
+                if (!first) {
+                    getList(obj.curr);
+                } else {
+
+                }
+
+            },
+
+
+        });
+
+
+    }
+
+    function openMenu(id) {
+        layer.open({
+            type: 1,
+            title: false,
+            shadeClose: true,
+            shade: 0.1,
+            closeBtn: 1,
+            area: ['530px'],
+            offset: '100px',
+            content: $(id)
+        });
+    }
+
+
+    function selectVal(searchBtnId, searchInputId, selectCode, searchBtnName, selectBtnName) {
+        if (selectCode == "") {
+            $("#" + searchBtnId).html(searchBtnName);
+        } else {
+            $("#" + searchBtnId).html(selectBtnName);
+        }
+        $("#" + searchInputId).val(selectCode);
+        layer.closeAll();
+        getList();
+    }
+
+
+    $(function () {
+        getList();
+//        	validity();
+    });
+
+
+    function ImgUrl(imgPath) {
+        var ts = imgPath
+        ts = ts.replace(/,/g, "");//取消字符串中出现的所有逗号
+//          alert(ts)
+        return ts
+    }
+
+    function getImgURl(imageSrc) {
+        var imgs = imageSrc.split("|");
+        return imgs;
+    }
+
+
+    function detailJq(shopid) {
+        alert(shopid)
+        window.location.href = 'shop/shopDetail.html?shopId=' + shopid;
+    }
+    function listpage() {
+    //     window.location.href = 'plkhome.html';
+    //     window.location.href = 'test/home.html';
+        // load('pages/NewCoin/plkhome.html',' plk')
+    }
+</script>
+
+</body>
+</html>
+<script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+<script>
+    //    window.onload = function () {
+    var content = document.getElementById('content'), oy;
+
+    function mousemove(e) {
+        e = e || window.event;
+        content.scrollTop += -(e.clientY - oy) / 15;
+    }
+
+    function mouseup() {
+        content.className = '';
+        content.onmouseup = content.onmousemove = null;
+    }
+
+    content.onmousedown = function (e) {
+        content.onmousemove = mousemove;
+        content.onmouseup = mouseup;
+        e = e || window.event;
+        oy = e.clientY;
+        content.className = 'noselect';
+    }
+
+</script>

@@ -1,0 +1,46 @@
+body { -moz-user-select: none; }
+.containerdiv{
+	font-family: "微软雅黑";
+	background-color: #006699;
+	color : #fff;
+	font-size: 20px;
+}
+
+.title{
+	color : #FF8F59;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.labelt{
+	color : #C4E1FF;
+	font-weight: bold;
+}
+
+
+.search{
+  padding : 10px;
+  margin:10px 0;
+  /*background : rgba(123, 204, 238, 0.8) none repeat scroll 0 0 !important;
+  background-color: #fff;
+  border: 2px solid #ccc;*/
+  border-radius: 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.search .but{
+	width: 223px;
+	height: 50px;
+	font-size: 24px;
+}
+#sidebar{
+	max-height:900px;
+	overflow: auto;
+	/*overflow: hidden;*/
+	text-align: left;
+	position:absolute;
+	top:80px;
+	left:50%;
+	cursor:default;
+}

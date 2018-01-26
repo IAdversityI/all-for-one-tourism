@@ -1,0 +1,110 @@
+.block .move {
+    /*overflow-x : hidden;
+    overflow-y : auto;*/
+    width : 875px;
+    height : 830px;
+}
+
+
+.block .move .moveBlock{
+    margin: 0px  0 0 65px;
+    width : 710px;
+    position : relative;
+    cursor: move;
+}
+
+.block .move .moveBlock .moveImg{	
+   
+     margin: 0px auto 0 auto;  
+	 height:150px;
+	 width : 700px;
+     /*height: auto;
+     width : 710px;
+	 width:100%;  margin: 20px auto 0 auto;  */
+}
+
+.block .move .moveBlock .qy{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    
+}
+
+.block .move .moveBlock .qy .qy_title{
+    color : #FF0000;
+}
+
+.block .move .moveBlock .intro{
+    color : #FF0000;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+.block .move .tsms{
+    margin : 30px auto;
+    width: 710px;
+    height: 250px;
+    background-color: #0c4558;
+    color: #fff;
+	overflow:hidden;
+}
+
+.block .move .tsms .tsms_left{
+    float : left;
+    width: 400px;
+    height: 250px;
+    margin: 15px;
+    margin-right:40px;
+}
+
+.block .move .tsms .tsms_left .tsms_title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.block .move .tsms .tsms_left .tsms_content{
+    font-size: 15px;
+	overflow:hidden;
+}
+
+.block .move .tsms .tsms_right{
+    float : left;
+    
+}
+
+
+
+.block .move .tsms2{
+    margin : 30px auto;
+    width: 710px;
+    height: 250px;
+    background-color: #304050;
+    color: #fff;
+}
+
+.block .move .tsms2 .tsms_right{
+    float : left;
+    width: 400px;
+    height: 250px;
+    margin: 15px;
+    margin-left:40px;
+     
+}
+
+.block .move .tsms2 .tsms_right .tsms_title{
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.block .move .tsms2 .tsms_right .tsms_content{
+    font-size: 15px;
+}
+
+.block .move .tsms2 .tsms_left{
+    float : left;
+    
+}
+
+

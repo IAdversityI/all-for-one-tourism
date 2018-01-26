@@ -1,0 +1,70 @@
+body { -moz-user-select: none; }
+.containerdiv{
+	font-family: "微软雅黑";
+	 -background-color: #006699;
+	 background-color: #eee;
+	color : #Fd8d58;
+	font-size: 20px;
+}
+
+.title{
+	color : #FF8F59;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.labelt{
+	color : #4cae4c;
+	font-weight: bold;
+}
+
+ 
+#sidebar{
+  max-height:900px;
+  overflow: auto;
+}
+
+
+.jqsslist{
+    /*color:#eee;*/
+    margin-bottom: 10px;
+    padding: 10px;
+    background : rgba(123, 204, 238, 0.8) none repeat scroll 0 0 !important;
+    border-radius: 5px;
+    max-height: 200px;
+overflow-y: hidden;
+    /*border: 2px solid #ccc;
+    opacity:0.8;
+    border-radius: 10px;
+    background: linear-gradient( #66ccff 10%,  #3366ff 80%);
+    background: #3366ff;*/
+}
+
+.radimg{
+    border-radius: 500px;
+    border:#f3f3f3 2px solid;
+}
+
+.jqsslist .title{
+    font-size: 24px;
+    font-weight: bold;
+    color : #FFFFCE;
+}
+
+.tiitle{
+    font-size: 19px;
+    font-weight: bold;
+    color : #FF2C67;
+}
+
+
+.jqsslist:HOVER {
+    background-color: #66ccff;
+    cursor: pointer;
+}
+
+
+.backbtn{
+margin-top:25px;
+}
+ 

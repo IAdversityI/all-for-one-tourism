@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>实时景区列表</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jqsslist.css" rel="stylesheet">
+
+  </head>
+  <body class="containerdiv">
+      <h1 class="text-center">实时目的地</h1>
+  <div class="container ">
+	<div class="col-md-12">
+		<div class="row ">
+			<div class="col-md-12 search">
+	  		<button id="searchklbtn" type="button" class="btn btn-success but" onclick="klbtn()">客流拥挤度</button>
+			<input id="searchklinput" type="hidden">
+			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+			<button id="searchjqbtn" type="button" class="btn btn-success but" onclick="jqbtn()">景区舒适度</button>
+			<input id="searchjqinput" type="hidden">
+			<!-- Indicates a successful or positive action -->
+			<button id="searchcwbtn" type="button" class="btn btn-success but" onclick="cwbtn()">车位密度</button>
+			<input id="searchcwinput" type="hidden">
+			<!-- Contextual button for informational alert messages -->
+			<button id="searchdqbtn" type="button" class="btn btn-success but" onclick="dqbtn()">所属区域</button>
+			<input id="searchdqinput" type="hidden">
+			<input id="layerNums" type="hidden">
+			<input id="currentPage" type="hidden" value="1"/>
+			</div>
+	  	</div>
+	      <div class="row">
+               <div id="layerpages" align="right"></div>
+          </div>
+          <div id="jqsslist" class="row">
+
+
+          </div>
+
+        </div>
+
+    </div><!--/.container-->
+
+    <div id="kl" style="padding: 30px;display: none;" class="klbtn">
+   		<button id="kl0" type="button" class="btn btn-info but" onclick="selectVal('searchklbtn','searchklinput','','客流拥挤度','客流拥挤度')">全部</button>
+   		<button id="kl1" type="button" class="btn btn-default but" onclick="selectVal('searchklbtn','searchklinput','28','客流拥挤度','较拥挤')">较拥挤</button>
+   		<button id="kl2" type="button" class="btn btn-default but" onclick="selectVal('searchklbtn','searchklinput','27','客流拥挤度','拥挤')">拥挤</button>
+   		<button id="kl3" type="button" class="btn btn-default but" onclick="selectVal('searchklbtn','searchklinput','26','客流拥挤度','一般')">一般</button>
+   		<button id="kl4" type="button" class="btn btn-default but" onclick="selectVal('searchklbtn','searchklinput','25','客流拥挤度','较舒适')">较舒适</button>
+   		<button id="kl5" type="button" class="btn btn-default but" onclick="selectVal('searchklbtn','searchklinput','24','客流拥挤度','舒适')">舒适</button>
+    </div>
+
+    <div id="jq" style="padding: 30px;display: none;" class="klbtn">
+   		<button id="jq0" type="button" class="btn btn-info but" onclick="selectVal('searchjqbtn','searchjqinput','','景区舒适度','景区舒适度')">全部</button>
+   		<button id="jq1" type="button" class="btn btn-default but" onclick="selectVal('searchjqbtn','searchjqinput','33','景区舒适度','棉衣')">棉衣</button>
+   		<button id="jq2" type="button" class="btn btn-default but" onclick="selectVal('searchjqbtn','searchjqinput','32','景区舒适度','毛衣')">毛衣</button>
+   		<button id="jq3" type="button" class="btn btn-default but" onclick="selectVal('searchjqbtn','searchjqinput','31','景区舒适度','外套')">外套</button>
+   		<button id="jq4" type="button" class="btn btn-default but" onclick="selectVal('searchjqbtn','searchjqinput','30','景区舒适度','长袖')">长袖</button>
+   		<button id="jq5" type="button" class="btn btn-default but" onclick="selectVal('searchjqbtn','searchjqinput','29','景区舒适度','短袖')">短袖</button>
+    </div>
+
+    <div id="cw" style="padding: 30px;display: none;" class="klbtn">
+   		<button id="cw0" type="button" class="btn btn-info but" onclick="selectVal('searchcwbtn','searchcwinput','','车位密度','车位密度')">全部</button>
+   		<button id="cw1" type="button" class="btn btn-default but" onclick="selectVal('searchcwbtn','searchcwinput','43','车位密度','已满')">已满</button>
+   		<button id="cw2" type="button" class="btn btn-default but" onclick="selectVal('searchcwbtn','searchcwinput','42','车位密度','较满')">较满</button>
+   		<button id="cw3" type="button" class="btn btn-default but" onclick="selectVal('searchcwbtn','searchcwinput','41','车位密度','一般')">一般</button>
+   		<button id="cw4" type="button" class="btn btn-default but" onclick="selectVal('searchcwbtn','searchcwinput','40','车位密度','空闲')">空闲</button>
+   		<button id="cw5" type="button" class="btn btn-default but" onclick="selectVal('searchcwbtn','searchcwinput','39','车位密度','较空闲')">较空闲</button>
+    </div>
+
+    <div id="dq" style="padding: 30px;display: none;" class="klbtn">
+        <button id="dq0" type="button" class="btn btn-info but" onclick="selectVal('searchdqbtn','searchdqinput','','所属区域','所属区域')">全省</button>
+        <button id="dq1" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520100','所属区域','贵阳')">贵阳</button>
+        <button id="dq2" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520200','所属区域','六盘水')">六盘水</button>
+        <button id="dq3" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520300','所属区域','遵义')">遵义</button>
+        <button id="dq4" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520400','所属区域','安顺')">安顺</button>
+        <button id="dq5" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520500','所属区域','毕节')">毕节</button>
+        <button id="dq6" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','520600','所属区域','铜仁')">铜仁</button>
+        <button id="dq7" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','522300','所属区域','黔西南')">黔西南</button>
+        <button id="dq8" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','522600','所属区域','黔东南')">黔东南</button>
+        <button id="dq9" type="button" class="btn btn-default but" onclick="selectVal('searchdqbtn','searchdqinput','522700','所属区域','黔南')">黔南</button>
+    </div>
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+	<script type="text/javascript" src="../../../view/js/laypage/laypage.js"></script>
+	 <script type="text/javascript" src="../dragstart.js"></script>
+    <script type="text/javascript">
+	  //禁止全选
+		$("body").bind("selectstart", function(){
+	        return false;
+	    });
+
+	    layer.config({
+		    extend: 'extend/layer.ext.js'
+		});
+
+    	function klbtn(){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['550px','300px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: $('#kl')
+
+			});
+    	}
+
+    	function jqbtn(){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['550px','300px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: $('#jq')
+
+			});
+    	}
+
+    	function cwbtn(){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['550px','300px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: $('#cw')
+			});
+    	}
+
+    	function dqbtn(){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['550px','450px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: $('#dq')
+
+			});
+    	}
+
+
+    	function getssdatail(kind,i,uid,typeId,type){
+    	    var detail;
+    	   $.ajax({
+                //url : 'http://220.197.219.76/travel/classification/getCalculate',
+                url : 'http://220.197.219.244:8088/travel/classification/getCalculate',
+                data:{
+                    "uId":uid,
+                    "typeId" : typeId,
+                    "type" : type
+                },
+                type:'post',
+                dataType:'jsonp',
+                //async:false,
+                success:function(msg){
+                   //return msg.msg;
+                    detail= msg.msg;
+                    //console.log("detail="+detail);
+
+                    console.log(kind+i);
+                    $('#'+kind+i).val(function() {  return this.value + ' <p>' + detail+'</p>';});
+                    //console.log("$(#ssd+i).val()="+$('#ssd'+i).val());
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    return textStatus+errorThrown ;
+                 }
+            });
+    	 return "";
+    	 //console.log("1="+detail);
+
+    	}
+
+
+    	function detailJq(uid){
+    	    //console.log(uid);
+    		 window.location.href='jqss-detail.html?oId=' + uid;
+
+    	}
+
+
+    	function getList(){
+    		//参数处理
+    		var klinput = $("#searchklinput").val();
+    		var jqinput = $("#searchjqinput").val();
+    		var cwinput = $("#searchcwinput").val();
+    		var dqinput = $("#searchdqinput").val();
+
+    		layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>",{icon:16,time:0});
+
+    		var jqsslist = $("#jqsslist");
+    		$.ajax({
+    			url : 'http://220.197.219.244:8088/travel/classification/getRealTimeInfo',
+    			data:{
+    				"objectType":"jq_class",   //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+    				"pageNo" : $("#currentPage").val() || 1,
+    				"pageSize" : 3,
+    				"jqssdType" : jqinput,
+    				"cwmdType" : cwinput,
+    				"jqklType" : klinput,
+    				"city" : dqinput
+    			},
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+    				laypage({
+    				    cont: 'layerpages',
+    				    curr:  $("#currentPage").val() || 1,
+    				    pages: data.pages,
+    				    groups: 3,
+    				    skin: '#AF0000',
+    				    jump: function(obj,first){
+    				    	$("#currentPage").val(obj.curr);
+    				    	if(!first){
+    				    		getList();
+
+    				    	}
+    				    }
+    				});
+
+					var infos = data.info;
+					var html="";
+    				for(var i = 0;i<infos.length;i++){
+    					html += "<div class='col-md-12 jqsslist' >";
+
+   				        html += "<div class='col-md-2' onclick='detailJq(" + infos[i].uId + ")'>";
+   				        html += "<p align='center'><img src='" + infos[i].headUrl + "' width='80%'    class='radimg'></p>";
+   				     	html += "<p align='center' class='title'>" + infos[i].objectName  + "</p>";
+   				        html += "</div>";
+
+   				        html += "<div class='col-md-5' '>"; //onclick='detailJq(" + infos[i].uId + ")'>";
+
+   				     	html += "<div id='divssd"+ i +"' class='col-md-4 co' onclick='openInfo(\"ssd" + i +"\",\"#divssd" + i + "\")'>";
+   				     	html += "<input id='ssd" + i + "' type='hidden' value='" + infos[i].ssdName + getssdatail('ssd',i,infos[i].uId,infos[i].ssdId,'jqssd')+ "'/>";
+   				     	html += "<p align='center' width='80px'>温度提示<p>";
+   				        html += "<p align='center'><img src='" + infos[i].ssdUrl +"' width='100%'  ></p>";
+   				     	html += "</div>";
+
+   				     	html += "<div id='divkl"+ i +"' class='col-md-4 co' onclick='openInfo(\"kl" + i +"\",\"#divkl" + i + "\")'>";
+				     	html += "<input id='kl" + i + "' type='hidden' value='" + infos[i].klName +getssdatail('kl',i,infos[i].uId,infos[i].klId,'jqkl')+ "'/>";
+				     	html += "<p align='center' >客流拥挤<p>";
+				        html += "<p align='center'><img src='" + infos[i].klUrl +"' width='100%'  ></p>";
+				     	html += "</div>";
+
+				     	html += "<div id='divcw"+ i +"' class='col-md-4 co' onclick='openInfo(\"cw" + i +"\",\"#divcw" + i + "\")'>";
+   				     	html += "<input id='cw" + i + "' type='hidden' value='" + infos[i].cwName +getssdatail('cw',i,infos[i].uId,infos[i].cwId,'jqcw')+ "'/>";
+				     	html += "<p align='center'>车位密度<p>";
+				        html += "<p align='center'><img src='" + infos[i].cwUrl +"' width='100%'  ></p>";
+				     	html += "</div>";
+
+   				        html += "</div>";
+
+   				        html += "<div class='col-md-3'>";
+   				        //html += "<p onclick='openNotice(" + i + ")' class='tiitle'>通知公告:" + infos[i].publishTime +"</p>";
+   				        html += "<p onclick='openNotice(" + i + ")' class=' '>通知公告: </p>";
+   				        html += "<p onclick='openNotice(" + i + ")' class='tiitle'>" + infos[i].publishTime +"</p>";
+   				        if(infos[i].content.length > 25){
+   				        	html += "<p onclick='openNotice(" + i + ")'>" + infos[i].content.substring(0,24) + "..." + "</p>";
+   				        }else{
+   				        	html += "<p onclick='openNotice(" + i + ")'>"  + infos[i].content + "</p>";
+   				        }
+   				    	 html += "<input id='notice" + i + "' type='hidden' value='" + infos[i].content + "'/>";
+   				        //infos[i].content
+   				     	//html += "<p><button type='button' class='btn btn-warning' style='text-align:center;width:150px' onclick='detailJq(" + infos[i].uId + ")'>更多请点击</button></p>";
+   				        html += "</div>";
+
+   				        html += "<div class='col-md-2'><p align='center'>即时图片<p>";
+   				     	if(infos[i].images != "undefined" && infos[i].images != null){
+	   				     	var imglength = infos[i].images.length;
+					        if(imglength >= 1){
+					        	html += "<div class='' onclick='openPhoto(" + i + ")'>";
+		   				     	html += "<p align='center'><img src='" + infos[i].images[0].fileUrl + "' width='110px' height='110px'></p>";
+
+		   				     	var photoDiv = "<div id='photoDiv" + i + "' style='display:none'>";
+						        photoDiv += "{'title' :''," +
+		        				"'id':'photo" + i + "'," +
+		        				"'start':'0'," +
+		        				"'data':["
+		   				        for(var j=0;j<imglength;j++){
+		   				        	photoDiv += "{'pid':'img"+ j +"'," +
+											"'src' : '" + infos[i].images[j].fileUrl + "'" +
+											 "}";
+									if(j+1 != imglength){
+										photoDiv += ",";
+									}
+		   				        }
+		   				     	photoDiv += "]}</div>";
+
+		   				     	html += photoDiv;
+		   				     	html += "</div>";
+					        }
+   				     	}else{
+   				     	    html += "<p align='center'>暂无！</p>";
+   				     	}
+   				        html += "</div></div>";
+    				}
+    				jqsslist.html(html);
+    				layer.closeAll();
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(textStatus);
+    				 layer.closeAll();
+    			 }
+    		});
+    	}
+    	getList();
+
+    	function selectVal(searchBtnId,searchInputId,selectCode,searchBtnName,selectBtnName){
+    		if(selectCode == ""){
+    			$("#" + searchBtnId).html(searchBtnName);
+    		}else{
+    			$("#" + searchBtnId).html(selectBtnName);
+    		}
+    		$("#" + searchInputId).val(selectCode);
+    		getList();
+    		//getList();
+    	}
+
+    	function openPhoto(id){
+    		var u = eval('('+$("#photoDiv" + id).html()+')');
+    		layer.photos({
+    	        photos: u
+				,closeBtn: 1
+				,area : ['800px']
+    	    });
+    	}
+
+    	function openNotice(id){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 2,
+				area : ['550px','300px'],
+				//offset:  ['78px', '40px'],
+				//offset:  '100px',
+			    content: "<div style='color:#000;font-size:20px;padding:20px;'>" + $('#notice' + id).val() + "</div>"
+			});
+    	}
+
+
+    	function openInfo(name,id){
+
+    		layer.tips("<div style='color:#000;font-size:26px;padding:10px;line-height:28px;text-align:center;'>" + $('#' + name).val() + "</div>", id);
+
+    	}
+    </script>
+
+    </body>
+</html>

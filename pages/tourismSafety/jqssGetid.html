@@ -1,0 +1,24 @@
+<script src='view/js/jquery-1.10.2.min.js'></script> 
+
+<script type="text/javascript">
+function GetQueryString(name)
+    {
+         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+         var r = window.location.search.substr(1).match(reg);
+         if(r!=null)return  unescape(r[2]); 
+         else return null;         
+    }
+   var id=GetQueryString("name"); 
+   console.log("id="+id ); 
+   alert(id);
+    //window.frames["detail"].location.href="pages/sssj/jqss/jqss-detail.html?oId=" + id ;
+    //window.frames["detail"].location.href="pages/sssj/jqss/jqss-detail.html?oId=58";
+//document.write("<iframe src='pages/sssj/jqss/jqss-detail.html?oId=" + GetQueryString('oId') + " allowtransparency='true'   frameborder='0' height='1100px'  width='100%' scrolling='no'></iframe>");
+//document.write("<iframe src='pages/sssj/jqss/jqss-detail.html?oId=58'  allowtransparency='true'   frameborder='0' height='1100px'  width='100%' scrolling='no'></iframe>");
+ //document.write("<iframe src='pages/sssj/jqss/jqss-list.html'  allowtransparency='true'   frameborder='0' height='1100px'  width='100%' scrolling='no'></iframe>");
+ 
+ 
+</script>
+
+<iframe  name="detail"   allowtransparency="true"   frameborder="0"  height="1100px"  width="100%" scrolling="no"></iframe>
+ 

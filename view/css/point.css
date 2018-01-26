@@ -1,0 +1,93 @@
+.point{
+    -width : 130px;
+    -height : 110px;
+    width : 190px;
+    height : 190px;
+    -background-color:#FF0000;
+    color:#fff;
+    font-size:3em;
+    -border: 1px solid #000;
+    /*position: relative;*/
+    position:absolute;
+    z-index: 100;
+    cursor: pointer;
+	 
+}
+
+.one{
+    top : 2117px;
+    left : 1814px;
+	background:url(../images/pages/lydt/1hgs.gif) no-repeat;
+	background-size:100%;
+	 
+}
+
+.two{
+    top : 833px;
+    left : 4328px;
+	background-image:url(../images/pages/lydt/2xj.gif);
+	background-size:100%;
+}
+.three{
+    top : 2669px;
+    left : 3540px;
+	background-image:url(../images/pages/lydt/3lb.gif);
+	background-size:100%;
+}
+
+.four{
+    top :  596px;
+    left : 3549px;
+	background-image:url(../images/pages/lydt/4fj.gif);background-size:100%;
+}
+
+.five{
+    top : 1292px;
+    left : 2427px;
+	background-image:url(../images/pages/lydt/5zy.gif);background-size:100%;
+}
+
+.six{
+    top :  1237px;
+    left : 3406px;
+	background-image:url(../images/pages/lydt/6zy.gif);background-size:100%;
+}
+
+.seven{
+    top :   1633px;
+    left : 1788px;
+	background-image:url(../images/pages/lydt/7zj.gif);background-size:100%;
+}
+
+.eight{
+    top :  1879px;
+    left : 2215px;
+	background-image:url(../images/pages/lydt/8lgg.gif);background-size:100%;
+}
+
+.nine{
+    top : 1676px;
+    left : 2006px;
+	background-image:url(../images/pages/lydt/9tpp.gif);background-size:100%;
+}
+
+.ten{
+    top : 1648px;
+    left : 2245px;
+	background-image:url(../images/pages/lydt/10hf.gif);background-size:100%;
+}
+
+.eleven{
+    top : 3200px;
+    left : 520px;
+    background-image:url(../images/pages/lydt/11mlh.gif);background-size:100%;
+}
+
+.twelve{
+    top : 2900px;
+    left : 750px;
+    background-image:url(../images/pages/lydt/12wfl.gif);background-size:100%;
+}
+
+
+ 

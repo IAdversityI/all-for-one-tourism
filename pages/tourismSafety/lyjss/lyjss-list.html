@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>实时景区列表</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lyjsslist.css" rel="stylesheet">
+  </head>
+  <body class="containerdiv">
+ <h1 class="text-center">官方公告</h1> 
+  <div class="container ">
+	<div class="col-md-12">
+		<div class="row ">
+			<div class="col-md-12 search">
+			<button id="searchdqbtn" type="button" class="btn btn-success but" onclick="dqbtn()">所属区域</button>
+			<input id="searchdqinput" type="hidden">
+			<input id="layerNums" type="hidden">
+			<input id="currentPage" type="hidden" value="1"/>
+			</div>
+	  	</div>
+	         <div class="row">
+          	   <div id="layerpages" align="right"></div>
+          </div>
+          <div id="jqsslist" class="row">
+            
+          </div><!--/row-->
+          
+        </div>
+
+    </div><!--/.container-->
+    
+    <div id="dq" style="padding: 30px;display: none;" class="klbtn">
+   		<button id="dq0" type="button" class="btn btn-info but" onclick="selectVal('searchbtn4','searchinput4','','所属区域','所属区域')">全省</button>
+   		<button id="dq1" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520100','所属区域','贵阳')">贵阳</button>
+   		<button id="dq2" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520200','所属区域','六盘水')">六盘水</button>
+   		<button id="dq3" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520300','所属区域','遵义')">遵义</button>
+   		<button id="dq4" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520400','所属区域','安顺')">安顺</button>
+   		<button id="dq5" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520500','所属区域','毕节')">毕节</button>
+   		<button id="dq6" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','520600','所属区域','铜仁')">铜仁</button>
+   		<button id="dq7" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522300','所属区域','黔西南')">黔西南</button>
+   		<button id="dq8" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522600','所属区域','黔东南')">黔东南</button>
+   		<button id="dq9" type="button" class="btn btn-default but" onclick="selectVal('searchbtn4','searchinput4','522700','所属区域','黔南')">黔南</button>
+    </div>
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../../../view/js/laypage/laypage.js"></script>  
+    <script type="text/javascript" src="../dragstart.js"></script>
+    <script type="text/javascript">
+  //禁止全选
+	    layer.config({
+		    extend: 'extend/layer.ext.js'
+		});
+	    
+    	function dqbtn(){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 1,
+				area : ['550px','450px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: $('#dq')
+			    
+			});
+    	}
+   $(".addcar").click(function(event){        
+ layer.prompt({
+    formType: 2,
+    value: '初始值',
+    title: '请输入值'
+}, function(value, index, elem){
+    alert(value); //得到value
+    layer.close(index);
+});
+
+});
+    	
+    	function detailJq(uid){
+    		window.location.href='lyjss-detail.html?oId=' + uid;
+    	}
+    	
+    	//var data = '{"pages":"1","info":[{"cwUrl":"../resources/experience/icon/cwmd_04.png","ssdName":"外套","cwName":"较满","publishTime":"2015-12-11 15:36:05","objectName":"梵净山","rzlName":null,"uId":18,"klUrl":"../resources/experience/icon/rlyjd_01.png","ssdUrl":"../resources/experience/icon/ssd_03.png","userType":4,"content":"哈哈","rzlUrl":null,"images":[{"fileUrl":"http://220.197.219.244:8080/travel_resources/travelFile/2015/12/11/20151211153604156283.jpg"}],"headUrl":"http://220.197.219.244:8080/travel_resources/userFile/2015/12/10/20151210223500194551.jpg","klName":"较舒适","video":"http://220.197.219.244:8080/travel_resources/travelFile/2015/12/11/20151211153604574855.mp4"},{"cwUrl":"../resources/experience/icon/cwmd_05.png","ssdName":"棉衣","cwName":"已满","publishTime":"2015-12-10 13:04:50","objectName":"景区测试","rzlName":null,"uId":15,"klUrl":"../resources/experience/icon/rlyjd_04.png","ssdUrl":"../resources/experience/icon/ssd_05.png","userType":4,"content":"测试的","rzlUrl":null,"images":[{"fileUrl":"http://220.197.219.244:8080/travel_resources/travelFile/2015/12/10/20151210130449729556.jpg"},{"fileUrl":"http://220.197.219.244:8080/travel_resources/travelFile/2015/12/10/20151210130449869129.jpg"}],"headUrl":"http://220.197.219.244:8080/travel_resources/userFile/2015/12/10/20151210215607361380.jpg","klName":"拥挤"}]}';
+    	function getList(){
+    		//参数处理
+    		var dqinput = $("#searchdqinput").val();
+    		
+    		layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>",{icon:16,time:0});
+    		
+    		var jqsslist = $("#jqsslist");
+    		$.ajax({
+    			url : 'http://220.197.219.244:8088/travel/classification/getRealTimeInfo',
+    			data:{
+    				"objectType":"lyj_class",   //景区：jq_class、酒店：jd_class、旅游局：lyj_class
+    				"pageNo" : $("#currentPage").val(),
+    				"pageSize" : 3,
+    				"city" : dqinput
+    			},
+    			type:'post',
+    		    dataType:'jsonp',
+    			success:function(data){
+    				//alert(eval("("+data+")"));
+    				//var pages = data.pages; //总记录数laypage")
+    				
+    				laypage({
+    				    cont: 'layerpages',
+    				    curr:  $("#currentPage").val() || 1,
+    				    pages: data.pages,
+    				    groups: 3,
+    				    skin: '#AF0000',
+    				    jump: function(obj,first){
+    				    	$("#currentPage").val(obj.curr);
+    				    	if(!first){
+    				    		getList();
+    				    	}
+    				    }
+    				});
+    				
+					var infos = data.info;
+					var html="";
+    				for(var i = 0;i<infos.length;i++){
+    					html += "<div class='col-md-12 jqsslist'>";
+    				        
+   				        html += "<div class='col-md-2' onclick='detailJq(" + infos[i].uId + ")'>";
+   				        html += "<p align='center'><img src='" + infos[i].headUrl + "' width='110px' height='110px' class='radimg'></p>";
+   				     	html += "<p align='center' class='title'>" + infos[i].objectName  + "</p>";
+   				        html += "</div>";
+   				        
+   				        html += "<div class='col-md-5'>";
+   				        
+   				   		html += "<p onclick='openNotice(" + i + ")' class='tiitle'>通知公告:" + infos[i].publishTime +"</p>";
+				        if(infos[i].content.length > 25){
+				        	html += "<p onclick='openNotice(" + i + ")'>" + infos[i].content.substring(0,24) + "..." + "</p>";
+				        }else{
+				        	html += "<p onclick='openNotice(" + i + ")'>"  + infos[i].content + "</p>";
+				        }
+				    	 html += "<input id='notice" + i + "' type='hidden' value='" + infos[i].content + "'/>";
+				        //infos[i].content
+				     	//html += "<p><button type='button' class='btn btn-warning' style='text-align:center;width:150px' onclick='detailJq(" + infos[i].uId + ")'>更多请点击</button></p>";
+				     	html += "<p><button type='button' class='btn btn-warning' style='text-align:center;width:150px' onclick='openNotice(" + i + ")'> 更多请点击</button></p>";
+				        html += "</div>";
+   				         html += "<div class='col-md-5'><p align='center'>即时图片<p>";
+   				    	if(infos[i].images != "undefined" && infos[i].images != null){
+	   				        var imglength = infos[i].images.length;
+	   				        if(imglength > 3){
+	   				        	imglength = 3;
+	   				        }
+	   				        for(var j=0;j<imglength;j++){
+		   				     	html += "<div class='col-md-4' onclick='openPhoto(" + i + ")'>";
+						     	html += "<p align='center'><img src='" + infos[i].images[j].fileUrl + "' width='110px' height='110px'></p>";
+						        html += "</div>";
+	   				        }
+	   				        
+	   				        if(imglength > 0){
+		   				    	var photoDiv = "<div id='photoDiv" + i + "' style='display:none'>";
+						        photoDiv += "{'title' :''," +
+		        				"'id':'photo" + i + "'," + 
+		        				"'start':'0'," +
+		        				"'data':["
+		   				        for(var j=0;j<infos[i].images.length;j++){
+		   				        	photoDiv += "{'pid':'img"+ j +"'," +
+											"'src' : '" + infos[i].images[j].fileUrl + "'" +
+											 "}";
+									if(j+1 != imglength){
+										photoDiv += ",";
+									}
+		   				        }
+		   				     	photoDiv += "]}</div>";
+		   				     	html += photoDiv;
+	   				        }
+   				    	}else{
+                            html += "<p align='center'>暂无！</p>";
+                        }
+   				        html += "</div></div>";
+    				}
+    				jqsslist.html(html);
+    				layer.closeAll();
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+    				 alert(textStatus);
+    				 layer.closeAll();
+    			 }
+    		});
+    	}
+    	getList();
+    	
+    	function selectVal(searchBtnId,searchInputId,selectCode,searchBtnName,selectBtnName){
+    		if(selectCode == ""){
+    			$("#" + searchBtnId).html(searchBtnName);
+    		}else{
+    			$("#" + searchBtnId).html(selectBtnName);
+    		}
+    		$("#" + searchInputId).val(selectCode);
+    		getList();
+    		//getList();
+    	}
+    	
+    	function openPhoto(id){
+    		var u = eval('('+$("#photoDiv" + id).html()+')');
+    		layer.photos({
+    	        photos: u
+    	    });
+    	}
+    	
+    	function openNotice(id){
+    		layer.open({
+				type:1,
+				title: false,
+				shadeClose:true,
+				shade: 0.1,
+				closeBtn: 2,
+				area : ['550px','300px'],
+				//offset:  ['78px', '40px'],
+				offset:  '100px',
+			    content: "<div style='color:#000;font-size:18px;padding:20px;'>" + $('#notice' + id).val() + "</div>"
+			});
+    	}
+    </script>
+    
+    </body>
+</html>

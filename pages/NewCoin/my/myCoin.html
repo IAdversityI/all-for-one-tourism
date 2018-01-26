@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>便利扣</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../../view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jqsslist.css" rel="stylesheet">
+
+    <link href="../../../view/js/layer/skin/layer.css" rel="stylesheet">
+    <link href="../../../view/js/layer/skin/layer.ext.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../view/js/jquery-1.10.2.min.js"></script>
+    <script src="../../../view/js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../../../view/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../../../view/js/laypage/laypage.js"></script>
+    <script src="../../../view/js/address.js"></script>
+</head>
+<body class="containerdiv" style="background: url(../../../view/images/bg.png)">
+<div><h1 class="text-center">我的便利扣</h1>
+</div>
+<div class="container ">
+    <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-12 search">
+                <div class="col-md-3">
+                </div>
+                <button id="searchbtn1" type="button" class="btn btn-info btn01" onclick="openMenu('#statustype')">未使用
+                </button>
+                <input id="searchinput1" type="hidden">
+
+                <button id="searchbtn2" type="button" class="btn btn-info btn01" onclick="openMenu('#activitytype')">
+                    我的便利票
+                </button>
+                <input id="searchinput2" type="hidden">
+                <input id="layerNums" type="hidden">
+                <input id="currentPage" type="hidden" value="1"/>
+            </div>
+        </div>
+
+        <div id="jqsslist">
+
+            <div class="col-md-12">
+                <div class="jqsslist">
+                    <!--<div style="width: 758px;height: 191px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 1px">-->
+                    <!--<div style="position: absolute;top: 0px;left:0px;width: 758px;height:191px">-->
+                    <!--<img src="../img/ticketPart01.png" alt="">-->
+                    <!--</div>-->
+                    <!--<div style="position: absolute;top: 0px;left:0px;width: 758px;height:191px">-->
+                    <!--<img src="../img/myTicket.png" alt="">-->
+                    <!--<div style="width:200px;height:30px;position: absolute;top:10px;left:500px;background-color:#1d4a1d;font-size: 24px">国酒文化城</div>-->
+                    <!--<div style="width:200px;height:30px;position: absolute;top:54px;left:500px;background-color:#1d4a1d;">免费</div>-->
+                    <!--<div style="width:200px;height:30px;position: absolute;top:96px;left:500px;background-color:#1d4a1d;">No:222222222</div>-->
+                    <!--<div style="width:200px;height:60px;font-size:14px;position: absolute;top:144px;left:500px;background-color:#1d4a1d;"><span style="font-size: 14px">有效期：起：2017/12/12 止：2012/12/30</span></div>-->
+                    <!--</div>-->
+
+                </div>
+
+            </div><!--/row-->
+
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div id="layerpages" class="col-md-11" align="right"></div>
+            </div>
+        </div>
+    </div><!--/.container-->
+    <div id="statustype" style="padding: 30px;display: none;" class="klbtn">
+        <button type="button" class="btn btn-default but"
+                onclick="selectVal('searchbtn1','searchinput1','0','使用状态','未使用')">未使用
+        </button>
+        <button type="button" class="btn btn-default but"
+                onclick="selectVal('searchbtn1','searchinput1','1','使用状态','已使用')">已使用
+        </button>
+    </div>
+
+    <div id="activitytype" style="padding: 30px;display: none;" class="klbtn">
+
+        <button type="button" class="btn btn-default but"
+                onclick="selectVal('searchbtn2','searchinput2','1','类型','便利票')">便利票
+        </button>
+        <button type="button" class="btn btn-default but"
+                onclick="selectVal('searchbtn2','searchinput2','2','类型','便利券')">便利券
+        </button>
+    </div>
+
+
+</div>
+</div>
+
+<script type="text/javascript">
+    var urlImg = 'http://114.115.149.80:8085';
+    // 禁止拖拽事件
+    document.ondragstart = function() {
+        return false;
+    };
+    //优惠信息展示
+    function getList(search) {
+        //参数处理
+
+        var statustype = $("#searchinput1").val() == "" ? 0 : $("#searchinput1").val();
+        var activitytype = $("#searchinput2").val() == "" ? 1 : $("#searchinput2").val();
+        console.log(statustype)
+        console.log(activitytype)
+
+        var mobile = localStorage.getItem("mobile");
+        var blkid = localStorage.getItem("blkid");
+        layer.msg("<span style='color:#000;font-size:20px;'>数据载入中,请稍后...<span>", {icon: 16, time: 0});
+        var jqsslist = $("#jqsslist");
+        if (search) {
+            $("#currentPage").val(1);
+        }
+        data = {"blkid": blkid, "status": statustype, "currentPage": 1, "type": activitytype},
+            console.log(data)
+        $.ajax({
+            url: 'http://114.115.149.80:8085/tmc/v1/getticketsbyblkid',
+            data: data,
+
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 0) {
+                    if (data.data.count != 0) {
+                        var loaddata = data;//将后台获取的json对象转换为数组
+                        loadData(loaddata);
+//                        jqsslist.html(html);
+                        layer.closeAll();
+                    }
+                    else {
+                        alert("亲，没有对应条件的选项呢")
+                        document.getElementById('jqsslist').innerHTML = ' ';
+                        document.getElementById('layerpages').innerHTML = ' ';
+                        layer.closeAll();
+                    }
+
+                } else {
+                    layer.closeAll();
+                    layer.msg(data.msg, {time: 2000});
+                }
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+                layer.closeAll();
+            }
+        });
+    }
+
+    //我的票
+    function loadData(data) {
+        var nums = 5; //每页出现的数量
+        var pages = Math.ceil(data.data.rows.length / nums);
+
+//模拟渲染
+        var render = function (data, curr) {
+            var arr = [], thisData = data.data.rows.slice((curr - 1) * nums, curr * nums)
+            var str = ''
+            for (var i = 0; i < thisData.length; i++) {
+                str += '<div style="width: 758px;height: 191px;background-color:blue;margin-bottom: 10px;position:relative;top: 0px;left: 68px">'
+                str += '<div style="position: absolute;top: 0px;left:0px;width: 758px;height:191px">'
+                str += '<img src="' + ImgUrl(urlImg + getImgURl(thisData[i].logo)) + '" style="height: 191px;width: 467px" alt="">'
+                str += '</div>'
+                str += '<div style="position: absolute;top: 0px;left:0px;width: 758px;height:191px">'
+                str += '<img src="../img/tiketPart01.png" alt="">'
+                str += '<div style="width:200px;height:30px;position: absolute;top:10px;left:500px;font-size: 24px">' + thisData[i].xytname + ' </div>'
+                str += '<div style="width:200px;height:30px;position: absolute;top:54px;left:500px;color:yellow ">' + price(thisData[i].xytprice) + '</div>'
+                str += '<div style="width:200px;height:30px;position: absolute;top:96px;left:500px;">' + "No:" + thisData[i].number + '</div>'
+                str += '<div style="width:200px;height:60px;font-size:14px;position: absolute;top:132px;left:500px;"><span style="font-size: 14px">' + "有效期" + validity(thisData[i].activestime) + '至' + validity(thisData[i].xytqyxq) + '</span></div>'
+                str += '</div>'
+                arr.push(str);
+                console.log(thisData.length)
+            }
+            return arr.join('');
+            console.log(str)
+        };
+        laypage({
+            cont: 'layerpages'//分页显示的位置
+            , skin: '#87f2ff' //自定义选中色值
+            , pages: pages //得到总页数
+            , skip: true //开启跳页
+            , jump: function (obj, first) {
+                if (!first) {
+                    getList();
+                    //layer.msg('第 '+ obj.curr +' 页');
+
+                }
+                document.getElementById('jqsslist').innerHTML = render(data, obj.curr);//pageBody：分页内容的位置
+                console.log(pages)
+            },
+
+
+        });
+    }
+
+
+    layer.config({
+        extend: 'extend/layer.ext.js'
+    });
+
+    function openMenu(id) {
+        layer.open({
+            type: 1,
+            title: false,
+            shadeClose: true,
+            shade: 0.1,
+            closeBtn: 1,
+            area: ['530px'],
+            offset: '100px',
+            content: $(id)
+        });
+    }
+
+    //优惠票正反面
+    function turnActive(show, hide) {
+        $(show).show();
+        $(hide).hide();
+    }
+
+    //    function selectVal(searchBtnId, searchInputId, selectCode, searchBtnName, selectBtnName) {
+    //        if (selectCode == "") {
+    //            $("#" + searchBtnId).html(searchBtnName);
+    //        } else {
+    //            $("#" + searchBtnId).html(selectBtnName);
+    //        }
+    //        $("#" + searchInputId).val(selectCode);
+    //        layer.closeAll();
+    //        getList(1);
+    //        console.log("getList(1);")
+    //    }
+    function selectVal(searchBtnId, searchInputId, selectCode, searchBtnName, selectBtnName) {
+        if (selectCode == "") {
+            $("#" + searchBtnId).html(searchBtnName);
+        } else {
+            $("#" + searchBtnId).html(selectBtnName);
+        }
+        $("#" + searchInputId).val(selectCode);
+        layer.closeAll();
+        getList();
+    }
+
+
+    $(function () {
+//    		getActivitytype();
+        getList(1);
+    });
+
+    //判断价钱
+    function price(pri) {
+        if (pri != 0)
+            return pri
+        else {
+            return "免费"
+        }
+
+    }
+
+    //获取图片
+    function ImgUrl(imgPath) {
+        var ts = imgPath
+        ts = ts.replace(/,/g, "");//取消字符串中出现的所有逗号
+        return ts
+    }
+
+    function getImgURl(imageSrc) {
+        var imgs = imageSrc.split("|");
+        return imgs;
+    }
+
+    //日期字符串处理
+    function validity(timeStr) {
+//		    var val = timeStr;
+        var val = timeStr;
+//            var ss = val.substring(10,28)
+        val = val.replace("T00:00:00.0000000+", ' ')
+//            alert(val)
+        return val;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="down">按下</button>
+<div id="ff">
+
+</div>
+</body>
+<script>
+    var down = document.getElementById('down')
+    var ff = document.getElementById('ff')
+    down.onclick =function () {
+        alert('已点击')
+        var str = '';
+        str+='<div>1111122</div>'
+        str+='<div>1111133</div>'
+        str+='<div>1111144</div>'
+        str+='<div>1111155</div>'
+        str+='<div>1111166</div>'
+       ff.innerHTML=str;
+    }
+</script>
+</html>
